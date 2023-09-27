@@ -1,0 +1,68 @@
+/* par défaut le site affiche les écrans mobiles entre 600 et 1200px*/
+header {
+    background-color: rgb(30, 194, 194);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: rgb(216, 14, 98);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ footer {
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(241, 212, 48);
+    font-family: 'Courier New', Courier, monospace;
+ }
+
+.dropdown-menu-content {
+    display: none;
+    list-style: none;
+    background-color: rgba(179, 154, 154, 0.123);
+    width: 70px;
+    text-align: center;
+}
+
+.dropdown-menu-content li {
+    margin-bottom: 10px;
+  }
+
+.visible {
+    display: block;
+}
+
+.post-its {
+
+}
+
+.post-it {
+    background-image: url("https://https://tinyurl.com/ypwkaaxj.com/5ae2uspa") ;
+}
+
+.buttonadd {
+    background-color: rgb(236, 238, 235);
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+/* grid pour les posts it, class post-Its avec un de largeur 
+
+
+
+/* media query pour des écrans en dessous de 600px */
+
+@media screen and (max-width: 600px) { 
+
+};
+
+
+/* media query pour des écrans au dessus de 1200px */
+
+@media screen and (min-width: 1200px) { 
+
+};
+
