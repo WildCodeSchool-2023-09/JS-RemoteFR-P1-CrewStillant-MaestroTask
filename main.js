@@ -1,10 +1,20 @@
+
+// le menu déroulant en appuyant sur le bouton Ajouter une checklist
+const dropdownBtn = document.querySelector(".dropdown-btn");
+
+
+// Fonction pour gérer l'affichage du menu déroulant
+function toggleDropdownMenu() {
+    dropdownMenu.classList.toggle("visible");
+}
+
 // Fonction pour afficher la date et l'heure
 function dateAndTime() {
     const currentDateAndTimeElements = document.querySelectorAll(".currentDateAndTime");
 
     const currentDate = new Date();
-    const optionsDate = { weekday: 'long', month: 'long', day: 'numeric' };
-    const optionsTime = { hour: '2-digit', minute: '2-digit' }; // N'inclut pas les secondes
+    const optionsDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const optionsTime = { hour: '2-digit', minute: '2-digit' }; 
 
     const formattedDate = currentDate.toLocaleDateString('fr-FR', optionsDate);
     const formattedTime = currentDate.toLocaleTimeString('fr-FR', optionsTime);
@@ -14,11 +24,12 @@ function dateAndTime() {
     });
 }
 
-// La fonction d'affichage de la date et de l'heure
+// Appeler la fonction d'affichage de la date et de l'heure
 dateAndTime();
 
-// Mise à jour la date et l'heure régulièrement
+// Mettre à jour la date et l'heure régulièrement
 setInterval(dateAndTime, 1000);
+
 
 
 // le menu déroulant en appuyant sur le bouton Ajouter une checklist
@@ -72,7 +83,11 @@ postItsgroupe.appendChild(postit);
 
 // ce ul ne s'affiche que si il à au moins une valeur (donc .visible à utliser avec un if true else)
 
+
+}
+
 // a la fin de la variable créer une const Listecrée = true
 // et se rapporter au début du code de la fonction pour mettre un if true afficher message "plus de place pour cette liste ;)"
 // else lancer le reste
+
 
