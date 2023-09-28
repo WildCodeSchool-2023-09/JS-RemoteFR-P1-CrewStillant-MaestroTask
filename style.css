@@ -1,14 +1,17 @@
 /* par défaut le site affiche les écrans mobiles entre 600 et 1200px*/
+:root{
+    font-family: Courier New, Courier, 'monospace';
+}
+
+
 body {
     background-color: #F7E1D7;
-    font-family: 'Courier New', Courier, monospace;
     margin:0;
     padding: 0;
 }
 header {
-    background-color: #EDAFB8;
+    background-color: #F7E1D7;
     color: black;
-    font-family: 'Courier New', Courier, monospace;
     height: 100px;
     width: 100%;
     align-items: center;
@@ -36,14 +39,21 @@ header {
     padding: 20px;
 }
 
+.title-h1 h1 {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+}
+.title-h1  {
+    display: flex;
+    justify-content: center;
+    color: black;
+    background-color: #EDAFB8;
+    box-sizing: content-box;
+    margin : 0 1.5rem;
+}
 
 
-
-
-
-
-
- footer {
+footer {
     position: absolute;
     bottom: 0;
     background-color: #EDAFB8;
