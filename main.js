@@ -21,19 +21,11 @@ dateAndTime();
 setInterval(dateAndTime, 1000);
 
 
+//QUENTIN
 // le menu déroulant en appuyant sur le bouton Ajouter une checklist
 const dropdownBtn = document.querySelector(".dropdown-btn");
 const dropdownMenu = document.querySelector(".dropdown-menu-content");
 
-// Fonction pour gérer l'affichage du menu déroulant
-function toggleDropdownMenu() {
-    dropdownMenu.classList.toggle("visible");
-}
-
-//QUENTIN
-// le menu déroulant en appuyant sur le bouton Ajouter une checklist
-const dropdownBtn = document.querySelector(".dropdown-btn");
-const dropdownMenu = document.querySelector('.dropdown-menu-content');
 dropdownBtn.addEventListener("click", function () {
 dropdownMenu.classList.toggle("visible");
 });
@@ -41,21 +33,20 @@ dropdownMenu.classList.toggle("visible");
 // fonction pour rajouter des li à l'ul ID Ajouter une tache dans le post it 
 const form = document.querySelector('#form');
 const inputToDo = document.querySelector('#todoinput');
-const toDoList = document.querySelector('#listeToDo');
+const toDoList = document.querySelector('#todolist');
 
-form.onsubmit = function (event) {
+form.onsubmit = function(event) {
 event.preventDefault();
 
 const newToDo = document.createElement("li");
 newToDo.innerHTML = inputToDo.value;
-
 toDoList.appendChild(newToDo);
 inputToDo.value = "";
 };
 
 // Déclaration de Post-Its, la div qui prendra les autres posts its
 
-const postItsgroupe = document.querySelector(".postits");
+const postItsgroupe = document.querySelector(".post-its");
 
 // function création du premier post-it
 
