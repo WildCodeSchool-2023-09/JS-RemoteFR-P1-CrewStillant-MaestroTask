@@ -34,21 +34,44 @@ html, body{
     padding: 0;
     margin: 0;
 }
-
-header {
-    background-color: rgb(30, 194, 194);
-    font-family: 'Courier New', Courier, monospace;
-}
-
+/* par défaut le site affiche les écrans mobiles entre 600 et 1200px*/
 body {
-    background-color: var(--pink-Light-Color);
+    background-color: #F7E1D7;
     font-family: 'Courier New', Courier, monospace;
+    margin:0;
+    padding: 0;
 }
-
+header {
+    background-color: #EDAFB8;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+.logo {
+    text-align: left;
+}
+.logo img {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+.mood img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+}
+.content {
+    text-align: center;
+    padding: 20px;
+}
  footer {
     position: absolute;
     bottom: 0;
-    background-color: rgb(241, 212, 48);
+    background-color: #EDAFB8;
     font-family: 'Courier New', Courier, monospace;
  }
 
@@ -82,7 +105,6 @@ body {
     justify-content: center;
 
 }
-
 
 /* grid pour les posts it, class post-Its avec un de largeur */
 
@@ -125,13 +147,9 @@ body {
 /* media query pour des écrans en dessous de 600px */
 
 @media screen and (max-width: 600px) { 
-
 };
-
 
 /* media query pour des écrans au dessus de 1200px */
 
 @media screen and (min-width: 1200px) { 
-
 };
-
