@@ -1,25 +1,25 @@
 /* par défaut le site affiche les écrans mobiles entre 600 et 1200px*/
 header {
-    background-color: rgb(30, 194, 194);
+    background-color: rgb(226, 152, 226);
     font-family: 'Courier New', Courier, monospace;
 }
 
 body {
-    background-color: rgb(216, 14, 98);
+    background-color: rgb(226, 152, 226);
     font-family: 'Courier New', Courier, monospace;
 }
 
  footer {
     position: absolute;
     bottom: 0;
-    background-color: rgb(241, 212, 48);
+    background-color: rgb(226, 152, 226);
     font-family: 'Courier New', Courier, monospace;
  }
 
 .dropdown-menu-content {
     display: none;
     list-style: none;
-    background-color: rgba(179, 154, 154, 0.123);
+    background-color: gold;
     width: 70px;
     text-align: center;
 }
@@ -28,16 +28,23 @@ body {
     margin-bottom: 10px;
   }
 
+.post-it {
+    box-shadow: 7px 7px 10px 0px #000000;
+    background-color: gold;
+    
+    border-radius: 16px;
+    
+    margin-left: 4rem;
+    margin-right: 4rem;
+    min-height: 20rem;
+}
+
+.buttonadd {
+    box-shadow: 7px 7px 10px 0px #000000;
+}
+
 .visible {
     display: block;
-}
-
-.post-its {
-
-}
-
-.post-it {
-    background-image: url("https://https://tinyurl.com/ypwkaaxj.com/5ae2uspa") ;
 }
 
 .buttonadd {

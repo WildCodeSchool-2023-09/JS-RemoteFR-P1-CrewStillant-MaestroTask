@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maestro Task</title>
     <link href="style.css" rel="stylesheet">
-    <script src="main.js"></script>
 </head>
 
 <body>
@@ -16,6 +15,30 @@
 
 
   <div class="post-its">
+    <div class="post-it">
+      <form id="form todo">
+        <label for="todoinput"> Ajoutez une tâche : </label>
+        <input
+        type="text"
+        name="todoinput"
+        placeholder="Inscrivez une tâche ici"
+        value=""
+        id="todoinput"
+        />
+      <input type="submit" value="send" />
+      </form>
+
+    <ul id="listeToDo">
+      <li>TEST RAFRAICHISSEMENT</li>
+      <li>TEST RAFRAICHISSEMENT</li>
+      <li>TEST RAFRAICHISSEMENT</li>
+      <li>TEST RAFRAICHISSEMENT</li>
+    
+      
+    </ul> 
+    
+    </div>
+
 
 
   </div>
@@ -24,27 +47,23 @@
 <!-- Pour le bouton ajouter une liste  -->
  <div>
     <ul>
-        <button class="buttonadd" class="dropdown-btn">Ajouter une liste</button>
+        <button class="buttonadd dropdown-btn">Ajouter une liste</button>
         <div class="dropdown-menu-content">
           <li>Module 1</li>
           <li>Module 2</li>
           <li>Module 3</li>
           <li>Module 4</li>
-          <li>Module 5</li>
-          <li>Module 6</li>
-          <li>Module 7</li>
         </div>
       </ul>
  </div>   
 
+<script src="main.js"></script>
+
+<footer> ICI ON RAJOUTE NOS COORDONNEES ET L'EQUIPE ! 
+</footer>
 </body>
 
 
-
-<footer> ICI ON RAJOUTE NOS COORDONNEES ET L'EQUIPE ! 
-
-
-</footer>
 
 
 </html>

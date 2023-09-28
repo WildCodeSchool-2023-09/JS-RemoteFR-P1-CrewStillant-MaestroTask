@@ -1,32 +1,50 @@
 // le menu déroulant en appuyant sur le bouton Ajouter une checklist
 const dropdownBtn = document.querySelector(".dropdown-btn");
-const dropdownMenu = document.querySelector(".dropdown-menu-content");
-// We listen for a click event
+const dropdownMenu = document.querySelector('.dropdown-menu-content');
 dropdownBtn.addEventListener("click", function () {
 dropdownMenu.classList.toggle("visible");
 });
 
+// fonction pour rajouter des li à l'ul ID Ajouter une tache dans le post it 
+const form = document.querySelector('#form');
+const inputToDo = document.querySelector('#todoinput');
+const toDoList = document.querySelector('#listeToDo');
+
+form.onsubmit = function (event) {
+event.preventDefault;
+
+const newToDo = document.createElement("li");
+newToDo.innerHTML = inputToDo.value;
+
+toDoList.appendChild(newToDo);
+inputToDo.value = "";
+};
+
+// Déclaration de Post-Its, la div qui prendra les autres posts its
+
+const postItsgroupe = document.querySelector(".postits");
+
+// function création du premier post-it
+
+const createPostItNormal = () => {
+const postit = document.createElement("div");
+postit.classList.add("post-it");
+postItsgroupe.appendChild(postit);
+
+const formUn = document.createElement("form");
 
 
 
-// ne pas oublier de rajouter une fonction "vous ne pouvez pas rajouter plus de listes" si la grid est pleine. Se limiter à 6 ou 8 listes par exemple. 
 
-// function supprimer une liste sur clic du bouton "X"
+// general pour les post-its en création:
+// const postit = document.createElement("div");
+// postit.classList.add("post-it");
 
 
-// la fonction de création des post-it 
-// const postits = document.querySelector(".post-Its");
 
-// //des arguments vont êter a rajouter à cette fonction au cours du développement par rapport à l'objet ou le tableau qui va nous servir de référence pour les modeles de post it
-// const createPostIt = () => {
-//     const postIt = document.createElementNS('div');
-//     postIt.classList.add("post-it");   
 //    //si on souhaite faire une image de fond type post-it générique pour notre post it, utiliser cette ligne, sinon voir ensemble comment faire 
-//    //postIt.style.backgroundImage = 
-//     postits.appendChild("postIt"); 
-
-// }
-
+// //    postIt.style.backgroundImage = "url('postit.png')";
+//    postits.appendChild("postIt"); 
 
 // je clique sur le bouton ajouter une liste de taches
 
@@ -40,6 +58,5 @@ dropdownMenu.classList.toggle("visible");
 // appel de la function création de to do list
 
 
-//
-
-
+// ne pas oublier de rajouter une fonction "vous ne pouvez pas rajouter plus de listes" si la grid est pleine. Se limiter à 6 ou 8 listes par exemple. 
+// function supprimer une liste sur clic du bouton "X"
