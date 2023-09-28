@@ -1,43 +1,49 @@
-/* par défaut le site affiche les écrans mobiles entre 600 et 1200px*/
+/* Réinitialisation des styles par défaut */
 body {
     background-color: #F7E1D7;
     font-family: 'Courier New', Courier, monospace;
-    margin:0;
+    margin: 0;
     padding: 0;
 }
+
+/* Styles du header */
 header {
-    background-color: #EDAFB8;
     color: black;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: monospace;
+    font-size: 18px;
     height: 100px;
     width: 100%;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    display: flex;
 }
-.logo {
-    text-align: left;
-}
-
+/*Style du logo*/
 .logo img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: auto;
     margin-left: 20px;
+    margin-top: 20px;
 }
 
+/* Styles des icônes de mood */
 .mood img {
     width: 80px;
     height: 80px;
     margin-right: 20px;
+    margin-top: 20px;
+    text-align: left;
+    
 }
 
-.content {
-    text-align: center;
-    padding: 20px;
+@media (max-width: 640px) {
+    .logo img {
+        width: 100px;
+    }
+
+    .mood img {
+        width: 50px;
+    }
 }
-
-
-
 
 
 

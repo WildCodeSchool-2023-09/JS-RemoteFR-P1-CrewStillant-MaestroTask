@@ -1,10 +1,33 @@
 // le menu déroulant en appuyant sur le bouton Ajouter une checklist
 const dropdownBtn = document.querySelector(".dropdown-btn");
 const dropdownMenu = document.querySelector(".dropdown-menu-content");
-// We listen for a click event
-dropdownBtn.addEventListener("click", function () {
-dropdownMenu.classList.toggle("visible");
-});
+
+// Fonction pour gérer l'affichage du menu déroulant
+function toggleDropdownMenu() {
+    dropdownMenu.classList.toggle("visible");
+}
+
+// Fonction pour afficher la date et l'heure
+function dateAndTime() {
+    const currentDateAndTimeElements = document.querySelectorAll(".currentDateAndTime");
+
+    const currentDate = new Date();
+    const optionsDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const optionsTime = { hour: '2-digit', minute: '2-digit' }; // N'inclut pas les secondes
+
+    const formattedDate = currentDate.toLocaleDateString('fr-FR', optionsDate);
+    const formattedTime = currentDate.toLocaleTimeString('fr-FR', optionsTime);
+
+    currentDateAndTimeElements.forEach(element => {
+        element.textContent = `${formattedDate} ${formattedTime}`;
+    });
+}
+
+// Appeler la fonction d'affichage de la date et de l'heure
+dateAndTime();
+
+// Mettre à jour la date et l'heure régulièrement
+setInterval(dateAndTime, 1000);
 
 
 
