@@ -1,3 +1,9 @@
+// Pour pouvoir modifier le titre selon le type de TO DO liste ou alors un simple display none,à tester. 
+const titleH1 = document.querySelector(".title-h1");
+// titleH1.innerHTML = ""
+
+
+
 // le menu déroulant en appuyant sur le bouton Ajouter une checklist
 const dropdownBtn = document.querySelector(".dropdown-btn");
 const dropdownMenu = document.querySelector(".dropdown-menu-content");
@@ -5,8 +11,6 @@ const dropdownMenu = document.querySelector(".dropdown-menu-content");
 dropdownBtn.addEventListener("click", function () {
 dropdownMenu.classList.toggle("visible");
 });
-
-
 
 
 // ne pas oublier de rajouter une fonction "vous ne pouvez pas rajouter plus de listes" si la grid est pleine. Se limiter à 6 ou 8 listes par exemple. 
