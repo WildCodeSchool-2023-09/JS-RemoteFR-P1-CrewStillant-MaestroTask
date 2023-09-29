@@ -35,7 +35,6 @@
 
 html, body {
   font-family: 'monospace';
-  font-weight: bold;
   padding: 0;
   margin: 0;
 }
@@ -156,6 +155,7 @@ footer {
   display: flex;
   justify-content: center;
   box-shadow: 7px 7px 10px 0px #000000;
+}
 
 .visible {
     display: block;
@@ -177,11 +177,19 @@ footer {
     width: 0.5vw;
     background-color: black;
     border-radius: 10px;
-    margin: 0.5rem 0;
+    margin: 0.5rem 0 0 17.5rem;
 }
 
 .left_section, .right_section {
     max-width: 50vw;
+}
+
+#mfUp {
+    margin: 1rem 0 0px 2rem;
+}
+
+#mfDown {
+    margin: 0 0 0 6.5rem;
 }
 
 .right_section {
