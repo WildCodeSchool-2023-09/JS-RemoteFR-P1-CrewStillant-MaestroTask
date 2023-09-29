@@ -4,39 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maestro Task</title>
-
     <link href="style.css" rel="stylesheet">
-
 </head>
 
 <body>
 
+    <!-- Header avec logo  -->
+    
   <header>
     <div class= "logo">
       <a href="index.html">
         <img src="https://i.ibb.co/G2WWQ3S/MAESTRO-TASK.png" alt="logo">
       </a>
     </div>
-    <span class="currentDateAndTime"></span>
+    <div class="currentDateAndTime">
+      <p class="currentDate"></p>
+      <p class="currentTime"></p>
+    </div>
     <div class="mood">
         <img src="https://img.icons8.com/pulsar-color/48/happy.png" alt="happy"/>
         <img src="https://img.icons8.com/pulsar-color/48/neutral-emoticon.png" alt="neutral-emoticon"/>
         <img src="https://img.icons8.com/pulsar-color/48/sad.png" alt="sad"/>
     </div>
+  </header>
+      <!-- Pour l'heure  -->
 
-  </header>  
-<div class="content">
-    <div class="date">
-      <p class="currentDate"></p>
-    </div>
-    <div class="time">
-      <p class="currentTime"></p>
-    </div>
-  </div>
 
+    <div class="content">
+        <div class="date">
+          <p class="currentDate"></p>
+        </div>
+        <div class="time">
+          <p class="currentTime"></p>
+        </div>
+      </div>
+  
+    <!-- H1  -->
+    
   <div class="title-h1">
     <h1>MA TO DO LISTE</h1>
   </div>
+
+    <!-- Pour les post-its  -->
 
   <div class="post-its">
     <div class="post-it">
@@ -55,6 +64,7 @@
   </div>  
 
 <!-- Pour le bouton ajouter une liste  -->
+
  <div>
     <ul>
         <button class="buttonadd dropdown-btn">Ajouter une liste</button>
@@ -66,11 +76,9 @@
         </div>
       </ul>
  </div>   
-
-<script src="main.js"></script>
-
-</body>
-
+    
+<!-- Footer défilant  -->
+  
  <footer class="footer_class"> 
   <!-- styling footer left & right side -->
   <section class="left_section">
@@ -142,6 +150,10 @@
     </div>
   </section>
 </footer>
-</body>
+    
+<!-- Lien Javascript  -->
 
+<script src="main.js"></script>
+    
+</body>
 </html>

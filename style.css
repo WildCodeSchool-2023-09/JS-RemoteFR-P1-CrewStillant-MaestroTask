@@ -34,31 +34,21 @@
 }
 
 html, body {
-    padding: 0;
-    margin: 0;
-}
-
-/* par défaut le site affiche les écrans mobiles entre 600 et 1200px*/
-:root{
-    font-family: Courier New, Courier, 'monospace';
-}
-  
-header {
-    background-color: rgb(226, 152, 226);
-    font-family: 'Courier New', Courier, monospace;
-}
-
-/* Par défaut, le site affiche les écrans mobiles entre 600 et 1200px */
-:root {
-    font-family: 'Courier New', Courier, monospace;
+  font-family: 'monospace';
+  padding: 0;
+  margin: 0;
 }
 
 body {
+background-color: #F7E1D7;
+}
 
-    background-color: #F7E1D7;
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    padding: 0;
+.logo {
+  text-align: left;
+  background-color: #F7E1D7;
+  font-family: 'monospace';
+  margin: 0;
+  padding: 0;
 }
 
 /* Styles du header */
@@ -72,40 +62,69 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #F7E1D7;
 }
 
 /* Style du logo */
+
 .logo img {
-    width: 120px;
-    height: auto;
-    margin-left: 20px;
-    margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  margin-left: 20px;
+  width: 120px;
+  height: auto;
+  margin-left: 20px;
+  margin-top: 20px;
+
 }
 
 /* Styles des icônes de mood */
-.mood img {
-    width: 80px;
-    height: 80px;
-    margin-right: 20px;
-    margin-top: 20px;
-    text-align: left;
 
+.mood img {
+  width: 80px;
+  height: 80px;
+  margin-right: 5px;
+  margin-top: 20px;
+  text-align: left;
+  cursor: pointer;
+}
+
+/*Style des icônes de mood en gris*/
+.mood img.grayed {
+    filter: grayscale(100%)
+}
+
+/*Style heure*/
+.currentTime {
+    font-size: 30px;
+    font-family: monospace;
+    text-align: center;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+/*Sytle date*/
+.currentDate {
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 75px;
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+   position: absolute;
+   bottom: 0;
+   width: 100%;
 }
 
 .content {
-    text-align: center;
-    padding: 20px;
+  text-align: center;
+  padding: 20px;
 }
 
 .title-h1 h1 {
-    margin: 0.5rem 0;
-    font-size: 1.5rem;
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
 }
 
 .title-h1 {
@@ -114,58 +133,52 @@ footer {
     color: black;
     background-color: #EDAFB8;
     box-sizing: content-box;
-
     margin: 0 1.5rem;
 }
 
-    margin : 0 1.5rem;
- }
-
-
 .dropdown-menu-content {
-    display: none;
-    list-style: none;
-    background-color: gold;
-    width: 70px;
-    text-align: center;
+  display: none;
+  list-style: none;
+  background-color: rgba(179, 154, 154, 0.123);
+  width: 70px;
+  text-align: center;
 }
 
 .dropdown-menu-content li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.visible {
+  display: block;
+  display: none;
+  list-style: none;
+  background-color: gold;
+  width: 70px;
+  text-align: center;
 }
 
 .post-it {
-    box-shadow: 7px 7px 10px 0px #000000;
-    background-color: gold;
-    
-    border-radius: 16px;
-    
-    margin-left: 4rem;
-    margin-right: 4rem;
-    min-height: 20rem;
+   box-shadow: 7px 7px 10px 0px #000000;
+   background-color: gold; 
+   border-radius: 16px;
+   margin-left: 4rem;
+   margin-right: 4rem;
+   min-height: 20rem;
 }
-
 
 .post-its {
     /* Ajoutez des styles pour .post-its si nécessaire */
 }
 
-.post-it {
-    background-image: url("https://tinyurl.com/ypwkaaxj.com/5ae2uspa");
-    /* Corrigez l'URL de l'image si nécessaire */
-
 .buttonadd {
-    box-shadow: 7px 7px 10px 0px #000000;
+  background-color: rgb(236, 238, 235);
+  display: flex;
+  justify-content: center;
+  box-shadow: 7px 7px 10px 0px #000000;
 }
 
 .visible {
     display: block;
-}
-
-.buttonadd {
-    background-color: rgb(236, 238, 235);
-    display: flex;
-    justify-content: center;
 }
 
 /* grid pour les posts it, class post-Its avec un de largeur */
@@ -209,9 +222,21 @@ footer {
 .right_section div:nth-child(1) {
     padding-left: 1rem;
 }
-
 /* Media query pour des écrans en dessous de 600px */
 @media screen and (max-width: 600px) {
+    .mood {
+        text-align: center;
+        width: 20%;
+    }
+
+    .currentDateAndTime {
+        text-align: center;
+        width: 20%;
+    }
+
+    .mood img {
+        width: 20%;
+    }
     /* Ajoutez vos styles pour les écrans en dessous de 600px ici */
 }
 
