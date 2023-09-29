@@ -1,13 +1,5 @@
 
-// le menu déroulant en appuyant sur le bouton Ajouter une checklist
-const dropdownBtn = document.querySelector(".dropdown-btn");
-
-
-// Fonction pour gérer l'affichage du menu déroulant
-function toggleDropdownMenu() {
-    dropdownMenu.classList.toggle("visible");
-}
-
+//Tugba
 // Fonction pour afficher la date et l'heure
 function dateAndTime() {
     const currentDateAndTimeElements = document.querySelectorAll(".currentDateAndTime");
@@ -30,16 +22,6 @@ dateAndTime();
 // Mettre à jour la date et l'heure régulièrement
 setInterval(dateAndTime, 1000);
 
-
-
-// le menu déroulant en appuyant sur le bouton Ajouter une checklist
-const dropdownBtn = document.querySelector(".dropdown-btn");
-const dropdownMenu = document.querySelector(".dropdown-menu-content");
-
-// Fonction pour gérer l'affichage du menu déroulant
-function toggleDropdownMenu() {
-    dropdownMenu.classList.toggle("visible");
-}
 
 //QUENTIN
 // le menu déroulant en appuyant sur le bouton Ajouter une checklist
@@ -65,27 +47,18 @@ inputToDo.value = "";
 };
 
 // Déclaration de Post-Its, la div qui prendra les autres posts its
-
 const postItsgroupe = document.querySelector(".postits");
 
 // function création du premier post-it
-
 const createPostItNormal = () => {
 const postit = document.createElement("div");
 postit.classList.add("post-it");
 postItsgroupe.appendChild(postit);
 }
 //créer une zone de textarea
-
 //sur survol, afficher "vous pouvez cliquer ici pour rajouter une tache"
-
 //sur click, prendre le texte saisi comme value et le renvoyer dans une li rattaché un ul sur le div du post-it 
-
 // ce ul ne s'affiche que si il à au moins une valeur (donc .visible à utliser avec un if true else)
-
-
-}
-
 // a la fin de la variable créer une const Listecrée = true
 // et se rapporter au début du code de la fonction pour mettre un if true afficher message "plus de place pour cette liste ;)"
 // else lancer le reste
