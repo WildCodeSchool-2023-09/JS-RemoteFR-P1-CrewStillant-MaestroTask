@@ -5,7 +5,7 @@ function dateAndTime() {
     const currentDateAndTimeElements = document.querySelectorAll(".currentDateAndTime");
 
     const currentDate = new Date();
-    const optionsDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const optionsDate = { weekday: 'long', month: 'long', day: 'numeric' };
     const optionsTime = { hour: '2-digit', minute: '2-digit' }; 
 
     const formattedDate = currentDate.toLocaleDateString('fr-FR', optionsDate);
