@@ -45,6 +45,7 @@ toDoInput.value = "";
 };
 
 // Déclaration de Post-Its, la div qui prendra les autres posts its
+
 const postItsgroupe = document.querySelector(".post-its");
 const buttonUn = document.querySelector('.button1');
 // cliquer sur le bouton ajouter une toDoList
@@ -84,9 +85,5 @@ buttonUn.addEventListener('click', function() {
 // remettre à zero la valeur à chaque saisie
 // 
 });
-
-
-
-
 
 
