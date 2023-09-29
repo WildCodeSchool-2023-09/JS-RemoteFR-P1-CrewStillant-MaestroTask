@@ -45,6 +45,7 @@ toDoInput.value = "";
 };
 
 // Déclaration de Post-Its, la div qui prendra les autres posts its
+
 const postItsgroupe = document.querySelector(".post-its");
 const buttonUn = document.querySelector('.button1');
 // cliquer sur le bouton ajouter une toDoList
@@ -86,7 +87,6 @@ buttonUn.addEventListener('click', function() {
 });
 
 
-
-
-
-
+// fonction création post-it tache urgente et title supprimé
+const urgentTaskPostIt = () => {
+const titleH1 = document.querySelector('.title-h1');
