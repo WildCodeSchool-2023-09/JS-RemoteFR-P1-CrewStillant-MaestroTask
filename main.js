@@ -22,7 +22,6 @@ dateAndTime();
 // Mettre à jour la date et l'heure régulièrement
 setInterval(dateAndTime, 1000);
 
-
 //QUENTIN
 // le menu déroulant en appuyant sur le bouton Ajouter une checklist
 const dropdownBtn = document.querySelector(".dropdown-btn");
@@ -50,6 +49,7 @@ const postItsgroupe = document.querySelector(".post-its");
 const buttonUn = document.querySelector('.button1');
 // cliquer sur le bouton ajouter une toDoList
 // function création du premier post-it
+
 buttonUn.addEventListener('click', function() {
 
 // creer un element id dans le grand bloc des posts it
@@ -86,4 +86,24 @@ buttonUn.addEventListener('click', function() {
 // 
 });
 
+const createPostItNormal = () => {
+const postit = document.createElement("div");
+postit.classList.add("post-it");
+postItsgroupe.appendChild(postit);
+}
 
+// fonction création post-it tache urgente et title supprimé
+const urgentTaskPostIt = () => {
+const titleH1 = document.querySelector('.title-h1');
+
+createPostItNormal()
+titleH1.innerHTML = "";
+}
+
+//créer une zone de textarea
+//sur survol, afficher "vous pouvez cliquer ici pour rajouter une tache"
+//sur click, prendre le texte saisi comme value et le renvoyer dans une li rattaché un ul sur le div du post-it 
+// ce ul ne s'affiche que si il à au moins une valeur (donc .visible à utliser avec un if true else)
+// a la fin de la variable créer une const Listecrée = true
+// et se rapporter au début du code de la fonction pour mettre un if true afficher message "plus de place pour cette liste ;)"
+// else lancer le reste
