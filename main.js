@@ -60,7 +60,7 @@ buttonUn.addEventListener('click', function() {
     const txtPostitUn = document.createElement("textarea");
     txtPostitUn.classList.add("postitxtUn");
     postit.appendChild(txtPostitUn);
-    // remplir le form avec le input
+    // remplir le form
     const txtInput = document.createElement("input");
     txtInput.setAttribute("type", "text");
     txtInput.setAttribute("name", "todoUn");
