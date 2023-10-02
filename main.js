@@ -21,9 +21,6 @@ dateAndTime();
 // Mettre à jour la date et l'heure régulièrement
 setInterval(dateAndTime, 1000);
 
-<<<<<<< HEAD
-=======
-
 // Le clic pour les emojis
 const emojis = document.querySelectorAll('.mood img');
 
@@ -38,9 +35,6 @@ emojis.forEach(emoji => {
     });
 });
 
-
-
->>>>>>> a0067e77245a356730937b4819b3dadc1febb0c7
 //QUENTIN
 // le menu déroulant en appuyant sur le bouton Ajouter une checklist
 const dropdownBtn = document.querySelector(".dropdown-btn");
@@ -76,6 +70,7 @@ const newTodo = document.createElement("li");
 newTodo.innerHTML = toDoInput.value;
 toDoList.appendChild(newTodo);
 toDoInput.value = "";
+
 };
 
 // Déclaration de Post-Its, la div qui prendra les autres posts its
@@ -84,10 +79,8 @@ const buttonUn = document.querySelector('.button1');
 // cliquer sur le bouton ajouter une toDoList
 // function création du premier post-it
 
-<<<<<<< HEAD
+
 //fonction post It numéro UN
-=======
->>>>>>> a0067e77245a356730937b4819b3dadc1febb0c7
 buttonUn.addEventListener('click', function() {
 // creer un element id dans le grand bloc des posts it
     const postitOne = document.createElement("div");
@@ -142,16 +135,8 @@ buttonUn.addEventListener('click', function() {
    
 });
 
-<<<<<<< HEAD
 
 // je rajoute donc la possibilité de prendre la valeur de submit et l'envoyer en li
-=======
-const createPostItNormal = () => {
-const postit = document.createElement("div");
-postit.classList.add("post-it");
-postItsgroupe.appendChild(postit);
-}
->>>>>>> a0067e77245a356730937b4819b3dadc1febb0c7
 
 const toDoPostOne= document.querySelector('#formOne');
 const toDoInputLiOne = document.querySelector('#todoinputOne')
@@ -165,22 +150,12 @@ toDoInputLiOne.value = "";
 };
 
 
-<<<<<<< HEAD
+
 //pensez à incorporer une verification sur début de création
 //si on a déjà une liste créée, on envoie un texte a l'utilisateur
 //pour ça il faut créer une cosnt = true en fin de création et la faire verifier en début de
 
 
-
 // // fonction création post-it tache urgente et title supprimé
 // const urgentTaskPostIt = () => {
 // const titleH1 = document.querySelector('.title-h1');
-=======
-//créer une zone de textarea
-//sur survol, afficher "vous pouvez cliquer ici pour rajouter une tache"
-//sur click, prendre le texte saisi comme value et le renvoyer dans une li rattaché un ul sur le div du post-it 
-// ce ul ne s'affiche que si il à au moins une valeur (donc .visible à utliser avec un if true else)
-// a la fin de la variable créer une const Listecrée = true
-// et se rapporter au début du code de la fonction pour mettre un if true afficher message "plus de place pour cette liste ;)"
-// else lancer le reste
->>>>>>> a0067e77245a356730937b4819b3dadc1febb0c7
