@@ -22,7 +22,6 @@ dateAndTime();
 // Mettre à jour la date et l'heure régulièrement
 setInterval(dateAndTime, 1000);
 
-
 //QUENTIN
 // le menu déroulant en appuyant sur le bouton Ajouter une checklist
 const dropdownBtn = document.querySelector(".dropdown-btn");
@@ -30,6 +29,22 @@ const dropdownMenu = document.querySelector('.dropdown-menu-content');
 dropdownBtn.addEventListener("click", function () {
 dropdownMenu.classList.toggle("visible");
 });
+
+// fonction PopUp
+
+// function popUp(){
+//     const popup = document.createElement('div');
+//     popup.classList.add("popup");
+//     popup.setAttribute("id", "test");
+//     const cancel = document.createElement('div');
+//     cancel.classList.add("cancel");
+//     cancel.innerHTML = 'close';
+//     cancel.onclick = function (e) { popup.parentNode.removeChild(popup) };
+//     const message = document.createElement('span');
+//     message.innerHTML = "Cette liste est déjà affichée sur votre page";
+//     popup.appendChild(message);                                    
+//     popup.appendChild(cancel);
+//     document.body.appendChild(popup);
 
 // fonction pour rajouter des li à l'ul ID Ajouter une tache dans le post it 
 const toDoForm = document.querySelector('#form');
@@ -45,48 +60,87 @@ toDoInput.value = "";
 };
 
 // Déclaration de Post-Its, la div qui prendra les autres posts its
-
 const postItsgroupe = document.querySelector(".post-its");
 const buttonUn = document.querySelector('.button1');
 // cliquer sur le bouton ajouter une toDoList
 // function création du premier post-it
+
+//fonction post It numéro UN
 buttonUn.addEventListener('click', function() {
-
 // creer un element id dans le grand bloc des posts it
-    const postit = document.createElement("div");
-    postit.classList.add("post-it");
-    postItsgroupe.appendChild(postit);
+    const postitOne = document.createElement("div");
+    postitOne.classList.add("post-it");
+    postItsgroupe.appendChild(postitOne);
     console.log('.postit');
-// creer une form
-    const txtPostitUn = document.createElement("textarea");
-    txtPostitUn.classList.add("postitxtUn");
-    postit.appendChild(txtPostitUn);
-    // remplir le form
-    const txtInput = document.createElement("input");
-    txtInput.setAttribute("type", "text");
-    txtInput.setAttribute("name", "todoUn");
-    txtInput.setAttribute("placeholder", "Inscrivez une tâche ici");
-    txtInput.setAttribute("value", "");
-    txtInput.setAttribute("id", "todoinputUn");
-    txtPostitUn.appendChild(txtInput);
-    // const textareaInputSubmit
-    const textareaInputSubmit = document.createElement("input");
-    textareaInputSubmit.setAttribute("type", "submit");
-    textareaInputSubmit.setAttribute("value", "send");
-    txtPostitUn.appendChild(textareaInputSubmit);
-    // creer un tableau d'ul pour y mettre les li d'après
-    const taskListUn = document.createElement('ul');
-    postit.appendChild(taskListUn);
-// fin de la fonction de création
 
-// ensuite pour chaque
-// prendre la valeur de l'input 
-// le transformer en value pour l'incorporer au tableau déjà existant
-// remettre à zero la valeur à chaque saisie
-// 
+     // creer un tableau d'ul pour y mettre les li d'après
+     const taskListOne = document.createElement('ul');
+     taskListOne.classList.add("tasklistOne")
+     postitOne.appendChild(taskListOne);
+    // fin de la fonction de création
+    //test pour voir si je peux remplir ou afficher mes li dans ul
+     const listeLiOne = document.createElement('li');
+     listeLiOne.innerHTML = "tuez moi rien n'a de sens";
+     taskListOne.appendChild(listeLiOne); 
+
+//je tente de creer une form pour voir si ça passe 
+
+    const postitFormOne = document.createElement("form");
+    postitFormOne.setAttribute("id", "formOne");
+    postitOne.appendChild(postitFormOne);
+// je lui donne un input avec setattribute et un input de validation
+    const inputFormOne = document.createElement("input");
+    inputFormOne.setAttribute("type", "text");
+    inputFormOne.setAttribute("name", "todo");
+    inputFormOne.setAttribute("placeholder", "tuez moi svp");
+    inputFormOne.setAttribute("value", "");
+    inputFormOne.setAttribute("id", "todoinputOne");
+    postitFormOne.appendChild(inputFormOne);
+    const submitform = document.createElement("input");
+    submitform.setAttribute("type", "submit");
+    submitform.setAttribute("value", "send");
+    postitOne.appendChild("submitform");    
+
+// creer une textarea
+
+// const txtPostitUn = document.createElement("textarea");
+    // txtPostitUn.classList.add("postitTxtUn");
+    // // remplir le form
+    // txtPostitUn.setAttribute("type", "text");
+    // txtPostitUn.setAttribute("name", "todoUn");
+    // txtPostitUn.setAttribute("placeholder", "Inscrivez une tâche ici");
+    // txtPostitUn.setAttribute("value", "");
+    // txtPostitUn.setAttribute("id", "todoinputUn");
+    // postitOne.appendChild(txtPostitUn);
+    // // creation button submit en dessous de textarea
+    // const textareaInputSubmit = document.createElement("input");
+    // textareaInputSubmit.setAttribute("type", "submit");
+    // textareaInputSubmit.setAttribute("value", "send");
+    // postitOne.appendChild(textareaInputSubmit);
+   
 });
 
 
-// fonction création post-it tache urgente et title supprimé
-const urgentTaskPostIt = () => {
-const titleH1 = document.querySelector('.title-h1');
+// je rajoute donc la possibilité de prendre la valeur de submit et l'envoyer en li
+
+const toDoPostOne= document.querySelector('#formOne');
+const toDoInputLiOne = document.querySelector('#todoinputOne')
+const toDoListOne = document.querySelector('.tasklistOne');
+FormOne.onsubmit = function(event) {
+event.preventDefault();
+const newTodoListUn = document.createElement("li");
+newTodoListUn.innerHTML = toDoInputLiOne.value;
+toDoListOne.appendChild(newTodoListUn);
+toDoInputLiOne.value = "";
+};
+
+
+//pensez à incorporer une verification sur début de création
+//si on a déjà une liste créée, on envoie un texte a l'utilisateur
+//pour ça il faut créer une cosnt = true en fin de création et la faire verifier en début de
+
+
+
+// // fonction création post-it tache urgente et title supprimé
+// const urgentTaskPostIt = () => {
+// const titleH1 = document.querySelector('.title-h1');

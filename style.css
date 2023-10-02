@@ -113,7 +113,6 @@ footer {
 
 .visible {
   display: block;
-  display: none;
   list-style: none;
   background-color: gold;
   width: 70px;
@@ -143,16 +142,15 @@ footer {
     /* Ajoutez des styles pour .post-its si nécessaire */
 }
 
+.formbug {
+  display: none;
+}
+
 .buttonadd {
   background-color: rgb(236, 238, 235);
   display: flex;
   justify-content: center;
   box-shadow: 7px 7px 10px 0px #000000;
-}
-
-}
-.visible {
-    display: block;
 }
 
 
