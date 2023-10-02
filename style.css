@@ -45,7 +45,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(226, 152, 226);
+    background-color: #F7E1D7;
 }
 
 /* Style du logo */
@@ -66,13 +66,32 @@ header {
 .mood img {
   width: 80px;
   height: 80px;
-  margin-right: 20px;
-  width: 80px;
-  height: 80px;
-  margin-right: 20px;
+  margin-right: 5px;
   margin-top: 20px;
   text-align: left;
+  cursor: pointer;
+}
 
+/*Style des icônes de mood en gris*/
+.mood img.grayed {
+    filter: grayscale(100%)
+}
+
+/*Style heure*/
+.currentTime {
+    font-size: 30px;
+    font-family: monospace;
+    text-align: center;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+/*Sytle date*/
+.currentDate {
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 75px;
 }
 footer {
    position: absolute;
@@ -127,6 +146,7 @@ footer {
    margin-right: 4rem;
    min-height: 20rem;
 }
+
 
 /* test de mise en page pour les futurs post-it car celui reste affiché*/
 .miseenpageform {
@@ -199,6 +219,19 @@ footer {
 }
 /* Media query pour des écrans en dessous de 600px */
 @media screen and (max-width: 600px) {
+    .mood {
+        text-align: center;
+        width: 20%;
+    }
+
+    .currentDateAndTime {
+        text-align: center;
+        width: 20%;
+    }
+
+    .mood img {
+        width: 20%;
+    }
     /* Ajoutez vos styles pour les écrans en dessous de 600px ici */
 }
 
