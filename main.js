@@ -1,19 +1,18 @@
-
 //Tugba
 // Fonction pour afficher la date et l'heure
 function dateAndTime() {
-    const currentDateAndTimeElements = document.querySelectorAll(".currentDateAndTime");
+    const currentDateElement = document.querySelector(".currentDate");
+    const currentTimeElement = document.querySelector(".currentTime");
 
     const currentDate = new Date();
     const optionsDate = { weekday: 'long', month: 'long', day: 'numeric' };
-    const optionsTime = { hour: '2-digit', minute: '2-digit' }; 
+    const optionsTime = { hour: '2-digit', minute: '2-digit'}; 
 
     const formattedDate = currentDate.toLocaleDateString('fr-FR', optionsDate);
     const formattedTime = currentDate.toLocaleTimeString('fr-FR', optionsTime);
 
-    currentDateAndTimeElements.forEach(element => {
-        element.textContent = `${formattedDate} ${formattedTime}`;
-    });
+    currentDateElement.textContent = formattedDate;
+    currentTimeElement.textContent = formattedTime;
 }
 
 // Appeler la fonction d'affichage de la date et de l'heure
@@ -21,6 +20,20 @@ dateAndTime();
 
 // Mettre à jour la date et l'heure régulièrement
 setInterval(dateAndTime, 1000);
+
+// Le clic pour les emojis
+const emojis = document.querySelectorAll('.mood img');
+
+// Gestionnaire d'événement de clic pour chaque emoji
+emojis.forEach(emoji => {
+    emoji.addEventListener('click', () => {
+        // Réinitialiser tous les emojis en gris
+        emojis.forEach(e => e.classList.add('grayed'));
+
+        // Retirer l'effet gris de l'emoji cliqué
+        emoji.classList.remove('grayed');
+    });
+});
 
 //QUENTIN
 // le menu déroulant en appuyant sur le bouton Ajouter une checklist
@@ -57,6 +70,7 @@ const newTodo = document.createElement("li");
 newTodo.innerHTML = toDoInput.value;
 toDoList.appendChild(newTodo);
 toDoInput.value = "";
+
 };
 
 // Déclaration de Post-Its, la div qui prendra les autres posts its
@@ -140,7 +154,7 @@ toDoInputLiOne.value = "";
 //pour ça il faut créer une cosnt = true en fin de création et la faire verifier en début de
 
 
-
 // // fonction création post-it tache urgente et title supprimé
 // const urgentTaskPostIt = () => {
 // const titleH1 = document.querySelector('.title-h1');
+
