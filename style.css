@@ -132,7 +132,6 @@ footer {
 
 .visible {
   display: block;
-  display: none;
   list-style: none;
   background-color: gold;
   width: 70px;
@@ -148,7 +147,6 @@ footer {
    min-height: 20rem;
 }
 
-
 /* test de mise en page pour les futurs post-it car celui reste affiché*/
 .miseenpageform {
     box-shadow: 7px 7px 10px 0px #000000;
@@ -163,6 +161,10 @@ footer {
     /* Ajoutez des styles pour .post-its si nécessaire */
 }
 
+.formbug {
+  display: none;
+}
+
 .buttonadd {
   background-color: rgb(236, 238, 235);
   display: flex;
@@ -170,11 +172,9 @@ footer {
   box-shadow: 7px 7px 10px 0px #000000;
 }
 
-
 .visible {
     display: block;
 }
-
 
 /* grid pour les posts it, class post-Its avec un de largeur */
 
