@@ -36,12 +36,6 @@ emojis.forEach(emoji => {
 });
 
 //QUENTIN
-// le menu déroulant en appuyant sur le bouton Ajouter une checklist
-const dropdownBtn = document.querySelector(".dropdown-btn");
-const dropdownMenu = document.querySelector('.dropdown-menu-content');
-dropdownBtn.addEventListener("click", function () {
-dropdownMenu.classList.toggle("visible");
-});
 
 // fonction PopUp
 
@@ -58,47 +52,36 @@ dropdownMenu.classList.toggle("visible");
 //     popup.appendChild(message);                                    
 //     popup.appendChild(cancel);
 //     document.body.appendChild(popup);
+// le menu déroulant en appuyant sur le bouton Ajouter une checklist
+const dropdownBtn = document.querySelector(".dropdown-btn");
+const dropdownMenu = document.querySelector('.dropdown-menu-content');
+dropdownBtn.addEventListener("click", function () {
+dropdownMenu.classList.toggle("visible");
+});
 
-// fonction pour rajouter des li à l'ul ID Ajouter une tache dans le post it 
-const toDoForm = document.querySelector('#form');
-const toDoInput = document.querySelector('#todoinput')
-const toDoList = document.querySelector('#todolist');
-
-form.onsubmit = function(event) {
-event.preventDefault();
-const newTodo = document.createElement("li");
-newTodo.innerHTML = toDoInput.value;
-toDoList.appendChild(newTodo);
-toDoInput.value = "";
-
-};
-
-// Déclaration de Post-Its, la div qui prendra les autres posts its
+// // Déclaration de Post-Its, la div qui prendra les autres posts its
 const postItsgroupe = document.querySelector(".post-its");
 const buttonUn = document.querySelector('.button1');
-// cliquer sur le bouton ajouter une toDoList
-// function création du premier post-it
-
-//fonction post It numéro UN
+const buttonOneInUse = true;
+// // cliquer sur le bouton ajouter une toDoList
+// // function création du premier post-it
 buttonUn.addEventListener('click', function() {
-// creer un element id dans le grand bloc des posts it
+     
+    // creer un element id dans le grand bloc des posts it
     const postitOne = document.createElement("div");
     postitOne.classList.add("post-it");
     postItsgroupe.appendChild(postitOne);
     console.log('.postit');
-
-     // creer un tableau d'ul pour y mettre les li d'après
+ // creer un tableau d'ul pour y mettre les li d'après
      const taskListOne = document.createElement('ul');
      taskListOne.classList.add("tasklistOne")
      postitOne.appendChild(taskListOne);
-    // fin de la fonction de création
-    //test pour voir si je peux remplir ou afficher mes li dans ul
-     const listeLiOne = document.createElement('li');
-     listeLiOne.innerHTML = "tuez moi rien n'a de sens";
-     taskListOne.appendChild(listeLiOne); 
+     //test pour voir si je peux remplir ou afficher mes li dans ul
+    //  const listeLiOne = document.createElement('li');
+    //  listeLiOne.innerHTML = "tuez moi rien n'a de sens";
+    //  taskListOne.appendChild(listeLiOne); 
 
-//je tente de creer une form pour voir si ça passe 
-
+//je cree une form 
     const postitFormOne = document.createElement("form");
     postitFormOne.setAttribute("id", "formOne");
     postitOne.appendChild(postitFormOne);
@@ -113,40 +96,24 @@ buttonUn.addEventListener('click', function() {
     const submitform = document.createElement("input");
     submitform.setAttribute("type", "submit");
     submitform.setAttribute("value", "send");
-    postitOne.appendChild("submitform");    
+    postitFormOne.appendChild(submitform);    
+//je recupere ses inputs
+    const toDoPostOne= document.querySelector('#formOne');
+    const toDoInputLiOne = document.querySelector('#todoinputOne');
+    const toDoListOne = document.querySelector('.tasklistOne');
+//je les transforme en un li dans ul
+    postitFormOne.onsubmit = function(event) {
+    event.preventDefault();
+    const newTodoListUn = document.createElement("li");
+    newTodoListUn.innerHTML = toDoInputLiOne.value;
+    toDoListOne.appendChild(newTodoListUn);
+    toDoInputLiOne.value = "";  
+     };});
 
-// creer une textarea
-
-// const txtPostitUn = document.createElement("textarea");
-    // txtPostitUn.classList.add("postitTxtUn");
-    // // remplir le form
-    // txtPostitUn.setAttribute("type", "text");
-    // txtPostitUn.setAttribute("name", "todoUn");
-    // txtPostitUn.setAttribute("placeholder", "Inscrivez une tâche ici");
-    // txtPostitUn.setAttribute("value", "");
-    // txtPostitUn.setAttribute("id", "todoinputUn");
-    // postitOne.appendChild(txtPostitUn);
-    // // creation button submit en dessous de textarea
-    // const textareaInputSubmit = document.createElement("input");
-    // textareaInputSubmit.setAttribute("type", "submit");
-    // textareaInputSubmit.setAttribute("value", "send");
-    // postitOne.appendChild(textareaInputSubmit);
-   
-});
+    
 
 
-// je rajoute donc la possibilité de prendre la valeur de submit et l'envoyer en li
 
-const toDoPostOne= document.querySelector('#formOne');
-const toDoInputLiOne = document.querySelector('#todoinputOne')
-const toDoListOne = document.querySelector('.tasklistOne');
-FormOne.onsubmit = function(event) {
-event.preventDefault();
-const newTodoListUn = document.createElement("li");
-newTodoListUn.innerHTML = toDoInputLiOne.value;
-toDoListOne.appendChild(newTodoListUn);
-toDoInputLiOne.value = "";
-};
 
 
 //pensez à incorporer une verification sur début de création
@@ -157,4 +124,3 @@ toDoInputLiOne.value = "";
 // // fonction création post-it tache urgente et title supprimé
 // const urgentTaskPostIt = () => {
 // const titleH1 = document.querySelector('.title-h1');
-
