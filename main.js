@@ -1,66 +1,45 @@
-
-//Tugba
-// Fonction pour afficher la date et l'heure
-function dateAndTime() {
-    const currentDateAndTimeElements = document.querySelectorAll(".currentDateAndTime");
-
-    const currentDate = new Date();
-    const optionsDate = { weekday: 'long', month: 'long', day: 'numeric' };
-    const optionsTime = { hour: '2-digit', minute: '2-digit' }; 
-
-    const formattedDate = currentDate.toLocaleDateString('fr-FR', optionsDate);
-    const formattedTime = currentDate.toLocaleTimeString('fr-FR', optionsTime);
-
-    currentDateAndTimeElements.forEach(element => {
-        element.textContent = `${formattedDate} ${formattedTime}`;
-    });
-}
-
-// Appeler la fonction d'affichage de la date et de l'heure
-dateAndTime();
-
-// Mettre à jour la date et l'heure régulièrement
-setInterval(dateAndTime, 1000);
-
-
-//QUENTIN
 // le menu déroulant en appuyant sur le bouton Ajouter une checklist
 const dropdownBtn = document.querySelector(".dropdown-btn");
-const dropdownMenu = document.querySelector('.dropdown-menu-content');
+const dropdownMenu = document.querySelector(".dropdown-menu-content");
+// We listen for a click event
 dropdownBtn.addEventListener("click", function () {
 dropdownMenu.classList.toggle("visible");
 });
 
-// fonction pour rajouter des li à l'ul ID Ajouter une tache dans le post it 
-const form = document.querySelector('#form');
-const inputToDo = document.querySelector('#todoinput');
-const toDoList = document.querySelector('#listeToDo');
 
-form.onsubmit = function (event) {
-event.preventDefault();
 
-const newToDo = document.createElement("li");
-newToDo.innerHTML = inputToDo.value;
 
-toDoList.appendChild(newToDo);
-inputToDo.value = "";
-};
+// ne pas oublier de rajouter une fonction "vous ne pouvez pas rajouter plus de listes" si la grid est pleine. Se limiter à 6 ou 8 listes par exemple. 
 
-// Déclaration de Post-Its, la div qui prendra les autres posts its
-const postItsgroupe = document.querySelector(".postits");
+// function supprimer une liste sur clic du bouton "X"
 
-// function création du premier post-it
-const createPostItNormal = () => {
-const postit = document.createElement("div");
-postit.classList.add("post-it");
-postItsgroupe.appendChild(postit);
-}
-//créer une zone de textarea
-//sur survol, afficher "vous pouvez cliquer ici pour rajouter une tache"
-//sur click, prendre le texte saisi comme value et le renvoyer dans une li rattaché un ul sur le div du post-it 
-// ce ul ne s'affiche que si il à au moins une valeur (donc .visible à utliser avec un if true else)
-// a la fin de la variable créer une const Listecrée = true
-// et se rapporter au début du code de la fonction pour mettre un if true afficher message "plus de place pour cette liste ;)"
-// else lancer le reste
+
+// la fonction de création des post-it 
+// const postits = document.querySelector(".post-Its");
+
+// //des arguments vont êter a rajouter à cette fonction au cours du développement par rapport à l'objet ou le tableau qui va nous servir de référence pour les modeles de post it
+// const createPostIt = () => {
+//     const postIt = document.createElementNS('div');
+//     postIt.classList.add("post-it");   
+//    //si on souhaite faire une image de fond type post-it générique pour notre post it, utiliser cette ligne, sinon voir ensemble comment faire 
+//    //postIt.style.backgroundImage = 
+//     postits.appendChild("postIt"); 
+
+// }
+
+
+// je clique sur le bouton ajouter une liste de taches
+
+
+// le menu déroulant se déroule en roulant
+
+// je survole le menu déroulant, cela met en surimprssion mon choix de la ligne
+
+// je clique sur un item du menu déroulant pour génerer une création d'un module de list
+// switch case 1 "module A": function creation de to do list (argument en fonction )
+// appel de la function création de to do list
+
+
+//
 
 
