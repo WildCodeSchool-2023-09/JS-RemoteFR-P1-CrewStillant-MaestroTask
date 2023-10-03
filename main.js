@@ -109,18 +109,11 @@ buttonUn.addEventListener('click', function() {
     toDoListOne.appendChild(newTodoListUn);
     toDoInputLiOne.value = "";  
      };});
-
-    
-
-
-
-
-
+ 
 //pensez à incorporer une verification sur début de création
 //si on a déjà une liste créée, on envoie un texte a l'utilisateur
 //pour ça il faut créer une cosnt = true en fin de création et la faire verifier en début de
 
-
-// // fonction création post-it tache urgente et title supprimé
+// fonction création post-it tache urgente et title supprimé
 // const urgentTaskPostIt = () => {
 // const titleH1 = document.querySelector('.title-h1');
