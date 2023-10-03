@@ -113,7 +113,7 @@ buttonUn.addEventListener('click', function() {
     const submitform = document.createElement("input");
     submitform.setAttribute("type", "submit");
     submitform.setAttribute("value", "send");
-    postitOne.appendChild("submitform");    
+    postitOne.appendChild(submitform);    
 
 // creer une textarea
 
