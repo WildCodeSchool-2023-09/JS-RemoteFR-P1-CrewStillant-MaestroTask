@@ -16,8 +16,8 @@
 
     }
 }
-html, body {
-  font-family: 'monospace';
+html body {
+  font-family: Courier New, Courier, 'monospace';
   padding: 0;
   margin: 0;
   width: 100%;
@@ -31,7 +31,7 @@ background-color: #F7E1D7;
 .logo {
   text-align: left;
   background-color: #F7E1D7;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Courier New, Courier, 'monospace';
   margin: 0;
   padding: 0;
 }
@@ -123,7 +123,8 @@ footer {
 .dropdown-menu-content {
   display: none;
   list-style: none;
-  background-color: rgba(179, 154, 154, 0.123);
+  background-color: gold;
+  border: 0;
   width: 70px;
   text-align: center;
 }
@@ -133,11 +134,12 @@ footer {
 }
 
 .visible {
-  display: block;
-  list-style: none;
-  background-color: gold;
-  width: 70px;
-  text-align: center;
+    font-family: Courier New, Courier, 'monospace';
+    display: block;
+    list-style: none;
+    background-color: gold;
+    width: 300px;
+    text-align: center;
 }
 
 .post-it {
@@ -167,30 +169,40 @@ footer {
   display: none;
 }
 
-ul {
+.ul_btn {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
     padding: 0;
+    flex-direction: column-reverse;
+    align-items: center;
 }
 
 .buttonadd {
-  background-color: rgb(246, 234, 0);
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: Courier New, Courier, 'monospace';
+  width: 300px;
+  background-color: gold;
   display: flex;
   justify-content: center;
   flex-direction: column;
   border: 0;
-  box-shadow: 7px 7px 10px 0px #000000;
+  align-items: center;
+  padding: 1rem 0;
+  box-shadow: 7px 10px 10px -1px #000000;
 }
 
-.dropdown-menu-content {
-    background-color: rgb(246, 234, 0);
+.bts {
+    font-family: Courier New, Courier, 'monospace';
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    background-color:  gold;
     border: 0;
+    padding: 0.8rem 0;
 }
-.visible {
-    display: block;
-}
+
 
 /* grid pour les posts it, class post-Its avec un de largeur */
 
@@ -198,6 +210,7 @@ ul {
 
 .footer_class {
     background-color: #EDAFB8;
+    position: static;
     display: flex;
     width: 100%;
     min-height: 15vh;
@@ -208,13 +221,24 @@ ul {
 .left_section{
     min-width: 48.5%;
 }
+
 .left_section div {
     min-width: 50%;
     font-size: 0.8rem;
 }
-#mfDown {
-    margin-left: 4.5rem;
+
+#mfUp {
+    margin-left: 1.5rem;
 }
+
+#mfDown {
+    margin-left: 6.5rem;
+}
+
+.text_footer_left {
+    margin-left: 1.5rem;
+}
+
 .dark_tray {
     min-width: 3px;
     max-width: 3px;
@@ -231,6 +255,7 @@ ul {
     overflow: hidden;
 
 }
+
 .right_section div {
     min-width: 100%;
     font-size: 0.8rem;
