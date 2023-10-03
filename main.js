@@ -96,6 +96,28 @@ buttonUn.addEventListener('click', function() {
     const submitform = document.createElement("input");
     submitform.setAttribute("type", "submit");
     submitform.setAttribute("value", "send");
+
+    postitOne.appendChild(submitform);    
+
+// creer une textarea
+
+// const txtPostitUn = document.createElement("textarea");
+    // txtPostitUn.classList.add("postitTxtUn");
+    // // remplir le form
+    // txtPostitUn.setAttribute("type", "text");
+    // txtPostitUn.setAttribute("name", "todoUn");
+    // txtPostitUn.setAttribute("placeholder", "Inscrivez une tâche ici");
+    // txtPostitUn.setAttribute("value", "");
+    // txtPostitUn.setAttribute("id", "todoinputUn");
+    // postitOne.appendChild(txtPostitUn);
+    // // creation button submit en dessous de textarea
+    // const textareaInputSubmit = document.createElement("input");
+    // textareaInputSubmit.setAttribute("type", "submit");
+    // textareaInputSubmit.setAttribute("value", "send");
+    // postitOne.appendChild(textareaInputSubmit);
+   
+});
+
     postitFormOne.appendChild(submitform);    
 //je recupere ses inputs
     const toDoPostOne= document.querySelector('#formOne');
@@ -111,6 +133,7 @@ buttonUn.addEventListener('click', function() {
      };});
 
     
+
 
 
 
