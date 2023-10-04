@@ -290,6 +290,13 @@ grid-gap: 3rem;
 padding-top: 4rem;
     }
 
+    form {
+        display: flex;
+        justify-content: center;
+        padding: 4rem
+    
+    }
+
 
 .post-it {
         box-shadow: 7px 7px 10px 0px #000000;
@@ -302,4 +309,3 @@ padding-top: 4rem;
         min-height: 20rem;
         max-width: 450px;
         }
-
