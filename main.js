@@ -1,15 +1,3 @@
-
-// le menu déroulant en appuyant sur le bouton Ajouter une checklist
-const dropdownBtn = document.querySelector(".dropdown-btn");
-const dropdownMenu = document.querySelector(".dropdown-menu-content");
-// We listen for a click event
-dropdownBtn.addEventListener("click", function () {
-dropdownMenu.classList.toggle("visible");
-});
-
-
-
-
 // ne pas oublier de rajouter une fonction "vous ne pouvez pas rajouter plus de listes" si la grid est pleine. Se limiter à 6 ou 8 listes par exemple. 
 
 // function supprimer une liste sur clic du bouton "X"
@@ -187,4 +175,3 @@ buttonUn.addEventListener('click', function() {
 // fonction création post-it tache urgente et title supprimé
 // const urgentTaskPostIt = () => {
 // const titleH1 = document.querySelector('.title-h1');
-
