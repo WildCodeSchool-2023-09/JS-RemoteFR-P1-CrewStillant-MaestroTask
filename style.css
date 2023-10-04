@@ -17,27 +17,29 @@
     }
 }
 html, body {
-  font-family: 'monospace';
-  padding: 0;
+  font-family: Courier New, Courier, 'monospace';
   margin: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vw;
 }
 
 body {
-background-color: #F7E1D7;
+    padding-bottom: 15vh;
+    position: relative;
+    background-color: #F7E1D7;
 }
 
 .logo {
   text-align: left;
   background-color: #F7E1D7;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Courier New, Courier, 'monospace';
   margin: 0;
   padding: 0;
 }
 
 /* Styles du header */
 header {
+    position: absolute; top: 0;
     color: black;
     font-family: monospace;
     font-size: 18px;
@@ -101,11 +103,6 @@ header {
     margin-bottom: 5px;
     margin-top: 75px;
 }
-footer {
-
-   bottom: 0;
-   width: 100%;
-}
 
 .content {
   text-align: center;
@@ -129,7 +126,8 @@ footer {
 .dropdown-menu-content {
   display: none;
   list-style: none;
-  background-color: rgba(179, 154, 154, 0.123);
+  background-color: gold;
+  border: 0;
   width: 70px;
   text-align: center;
 }
@@ -139,11 +137,12 @@ footer {
 }
 
 .visible {
-  display: block;
-  list-style: none;
-  background-color: rgb(246, 235, 146);
-  width: 70px;
-  text-align: center;
+    font-family: Courier New, Courier, 'monospace';
+    display: block;
+    list-style: none;
+    background-color: gold;
+    width: 300px;
+    text-align: center;
 }
 
 .post-it {
@@ -176,8 +175,9 @@ footer {
   display: none;
 }
 
-ul {
-    width: 80%;
+
+.ul_btn {
+    width: 100%;
     height: 100%;
     /* display: flex;
     align-items: flex-start; */
@@ -191,27 +191,38 @@ li {
 
 form {
     display: flex;
+    padding: 0;
+    flex-direction: column-reverse;
+    align-items: center;
     justify-content: center;
     padding: 4rem
-
 }
 
 .buttonadd {
-  background-color: rgb(246, 234, 0);
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: Courier New, Courier, 'monospace';
+  width: 300px;
+  background-color: gold;
   display: flex;
   justify-content: center;
   flex-direction: column;
   border: 0;
-  box-shadow: 7px 7px 10px 0px #000000;
+  align-items: center;
+  padding: 1rem 0;
+  box-shadow: 7px 10px 10px -1px #000000;
 }
 
-.dropdown-menu-content {
-    background-color: rgb(246, 234, 0);
+.bts {
+    font-family: Courier New, Courier, 'monospace';
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    background-color:  gold;
     border: 0;
+    padding: 0.8rem 0;
 }
-.visible {
-    display: block;
-}
+
 
 /* grid pour les posts it, class post-Its avec un de largeur */
 
@@ -219,6 +230,7 @@ form {
 
 .footer_class {
     background-color: #EDAFB8;
+    position: absolute; bottom: 0;
     display: flex;
     width: 100%;
     min-height: 15vh;
@@ -229,13 +241,24 @@ form {
 .left_section{
     min-width: 48.5%;
 }
+
 .left_section div {
     min-width: 50%;
     font-size: 0.8rem;
 }
-#mfDown {
-    margin-left: 4.5rem;
+
+#mfUp {
+    margin-left: 1.5rem;
 }
+
+#mfDown {
+    margin-left: 6.5rem;
+}
+
+.text_footer_left {
+    margin-left: 1.5rem;
+}
+
 .dark_tray {
     min-width: 3px;
     max-width: 3px;
@@ -252,6 +275,7 @@ form {
     overflow: hidden;
 
 }
+
 .right_section div {
     min-width: 100%;
     font-size: 0.8rem;
@@ -280,10 +304,12 @@ form {
    }
 
     .mood img {
+        height: auto;
         width: 50px;
     }
 
     .logo img {
+        height: auto;
         width: 100px;
     }
 }
@@ -291,6 +317,22 @@ form {
 /* Media query pour des écrans au-dessus de 1200px */
 @media screen and (min-width: 1200px) {
     /* Ajoutez vos styles pour les écrans au-dessus de 1200px ici */
+
+}
+
+@media screen and (max-width: 422px) {
+
+    .mood img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .logo img {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
 .post-its {
 display: grid;
 grid-template-columns: repeat(auto-fill, 30%);

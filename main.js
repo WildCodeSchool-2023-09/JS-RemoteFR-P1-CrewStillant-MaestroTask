@@ -282,4 +282,3 @@ if (buttonFourInUse == 0 ){
 
 // fonction création post-it tache urgente et title supprimé
 // const urgentTaskPostIt = () => {
-// const titleH1 = document.querySelector('.title-h1');
