@@ -85,14 +85,6 @@ buttonOne.addEventListener('click', function() {
     const removeButtonOne = document.createElement('button');
     removeButtonOne.classList.add("removeOne");
     postitOne.appendChild(removeButtonOne);
-
-    // j'écoute les clicks dessus et je supprime la div si jamais on le touche !
-    removeButtonOne.addEventListener('click', function () 
-    { const divtoremoveOne = document.getElementsByClassName("postremoveOne");
-    divtoremoveOne.remove();
-    buttonOneInUse -= 1;
-    });    
-    
  // creer un tableau d'ul pour y mettre les li d'après
      const taskListOne = document.createElement('ul');
      taskListOne.classList.add("tasklistOne")
@@ -133,8 +125,17 @@ buttonOne.addEventListener('click', function() {
     toDoListOne.appendChild(newTodoListUn);
     toDoInputLiOne.value = "";  
      };
+     //j'incrémente de 1 mon Butt'use pour qu'il se bloque
+buttonOneInUse += 1;
+    // j'écoute les clicks dessus et je supprime la div si jamais on le touche !
+    removeButtonOne.addEventListener('click', function () {const divtoremoveOne = document.querySelectorAll('.postremoveOne');
+    divtoremoveOne.forEach(postremoveOne => {
+     postremoveOne.remove();
+     buttonOneInUse -= 1;})});
 
-buttonOneInUse += 1
+    
+    
+
 } else {
     alert("Désolé Cher Utilisateur mais il n'est pas encore possible de créer plusieurs fois la même liste !");
 }
