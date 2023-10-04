@@ -1,5 +1,3 @@
-
-
 /* Par défaut, le site affiche les écrans mobiles 600px, first breakpoint 500px, 800px */
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway&family=Recursive&display=swap');
@@ -346,6 +344,3 @@ padding-top: 4rem;
         height: 2rem;
     }
 }
-
-
-
