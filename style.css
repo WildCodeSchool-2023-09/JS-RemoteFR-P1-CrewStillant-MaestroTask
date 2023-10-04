@@ -194,6 +194,8 @@ footer {
    margin-right: 3.5rem;
    min-height: 20rem;
    max-width: 450px;
+   overflow-y: auto;
+   word-wrap: break-word;
    }
 
 /* test de mise en page pour les futurs post-it car celui reste affiché*/
