@@ -16,16 +16,17 @@
 
     }
 }
-html body {
+html, body {
   font-family: Courier New, Courier, 'monospace';
-  padding: 0;
   margin: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vw;
 }
 
 body {
-background-color: #F7E1D7;
+    padding-bottom: 15vh;
+    position: relative;
+    background-color: #F7E1D7;
 }
 
 .logo {
@@ -38,6 +39,7 @@ background-color: #F7E1D7;
 
 /* Styles du header */
 header {
+    position: absolute; top: 0;
     color: black;
     font-family: monospace;
     font-size: 18px;
@@ -100,11 +102,6 @@ header {
     text-align: center;
     margin-bottom: 5px;
     margin-top: 75px;
-}
-footer {
-
-   bottom: 0;
-   width: 100%;
 }
 
 .content {
@@ -216,7 +213,7 @@ footer {
 
 .footer_class {
     background-color: #EDAFB8;
-    position: static;
+    position: absolute; bottom: 0;
     display: flex;
     width: 100%;
     min-height: 15vh;
@@ -286,10 +283,12 @@ footer {
    }
 
     .mood img {
+        height: auto;
         width: 50px;
     }
 
     .logo img {
+        height: auto;
         width: 100px;
     }
 }
@@ -297,4 +296,17 @@ footer {
 /* Media query pour des écrans au-dessus de 1200px */
 @media screen and (min-width: 1200px) {
     /* Ajoutez vos styles pour les écrans au-dessus de 1200px ici */
+}
+
+@media screen and (max-width: 422px) {
+
+    .mood img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .logo img {
+        width: 2rem;
+        height: 2rem;
+    }
 }

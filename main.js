@@ -130,7 +130,7 @@ buttonUn.addEventListener('click', function() {
     newTodoListUn.innerHTML = toDoInputLiOne.value;
     toDoListOne.appendChild(newTodoListUn);
     toDoInputLiOne.value = "";  
-     };});
+     };
 
     
 
