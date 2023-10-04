@@ -145,5 +145,9 @@ buttonUn.addEventListener('click', function() {
 
 
 // // fonction création post-it tache urgente et title supprimé
-// const urgentTaskPostIt = () => {
-// const titleH1 = document.querySelector('.title-h1');
+const urgentTaskPostIt = () => {
+    const titleH1 = document.querySelector('.title-h1');
+    titleH1.classList.add("title-h1");
+    titleH1.style.backgroundColor = "gold";
+    
+}

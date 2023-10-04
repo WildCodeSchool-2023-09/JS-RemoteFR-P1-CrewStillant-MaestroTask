@@ -17,15 +17,18 @@
     }
 }
 html, body {
+  box-sizing: border-box;
   font-family: Courier New, Courier, 'monospace';
   margin: 0;
   width: 100vw;
   height: 100vw;
 }
 
+#littleBody {
+    padding-bottom: 25vh;
+}
+
 body {
-    padding-bottom: 15vh;
-    position: relative;
     background-color: #F7E1D7;
 }
 
@@ -39,7 +42,6 @@ body {
 
 /* Styles du header */
 header {
-    position: absolute; top: 0;
     color: black;
     font-family: monospace;
     font-size: 18px;
@@ -70,11 +72,11 @@ header {
 .mood {
     text-align: center;
     margin-top: 20px;
-    
+    margin-right: 20px;
 }
 
 .mood img {
-  width: 60px;
+  width: 80px;
   height: 80px;
   margin-right: 5px;
   margin-top: 20px;
@@ -106,7 +108,7 @@ header {
 
 .content {
   text-align: center;
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
 }
 
 .title-h1 h1 {
@@ -212,11 +214,11 @@ header {
 /* ----------------------FOOTER STYLE------------------------------- */
 
 .footer_class {
+    position: fixed; bottom: 0;
     background-color: #EDAFB8;
-    position: absolute; bottom: 0;
     display: flex;
     width: 100%;
-    min-height: 15vh;
+    min-height: 10vh;
     max-height: max-content;
     font-family: 'Recursive', sans-serif;
 }
@@ -265,9 +267,17 @@ header {
     animation: slideName 40s linear infinite;
 }
 
+
+.right_section div>a {
+    text-decoration: none;
+    color: black;
+    line-height: 1rem;
+}
+
 .right_section div:nth-child(1) {
     padding-left: 1rem;
 }
+
 /* Media query pour des écrans en dessous de 600px */
 @media screen and (max-width: 600px) {
     .right_section div {
@@ -299,6 +309,10 @@ header {
 }
 
 @media screen and (max-width: 422px) {
+
+    .footer_class {
+        max-height: 15vh;
+    }
 
     .mood img {
         width: 2rem;
