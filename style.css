@@ -317,22 +317,6 @@ form {
 /* Media query pour des écrans au-dessus de 1200px */
 @media screen and (min-width: 1200px) {
     /* Ajoutez vos styles pour les écrans au-dessus de 1200px ici */
-
-}
-
-@media screen and (max-width: 422px) {
-
-    .mood img {
-        width: 2rem;
-        height: 2rem;
-    }
-
-    .logo img {
-        width: 2rem;
-        height: 2rem;
-    }
-}
-
 .post-its {
 display: grid;
 grid-template-columns: repeat(auto-fill, 30%);
@@ -352,4 +336,18 @@ padding-top: 4rem;
         min-height: 20rem;
         max-width: 450px;
         }
+}
+
+@media screen and (max-width: 422px) {
+
+    .mood img {
+        width: 2rem;
+        height: 2rem;
     }
+
+    .logo img {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+    
