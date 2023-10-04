@@ -185,6 +185,10 @@ header {
     padding: 4rem;
 }
 
+li {
+    list-style-type: none;
+}
+
 form {
     display: flex;
     padding: 0;
@@ -281,6 +285,10 @@ form {
 .right_section div:nth-child(1) {
     padding-left: 1rem;
 }
+
+.circle_icons{
+    display: none;
+}
 /* Media query pour des écrans en dessous de 600px */
 @media screen and (max-width: 600px) {
     .right_section div {
@@ -344,3 +352,4 @@ padding-top: 4rem;
         min-height: 20rem;
         max-width: 450px;
         }
+    }

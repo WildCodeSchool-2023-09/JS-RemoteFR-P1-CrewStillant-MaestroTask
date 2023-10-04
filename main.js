@@ -1,38 +1,3 @@
-// ne pas oublier de rajouter une fonction "vous ne pouvez pas rajouter plus de listes" si la grid est pleine. Se limiter à 6 ou 8 listes par exemple. 
-
-// function supprimer une liste sur clic du bouton "X"
-
-
-// la fonction de création des post-it 
-// const postits = document.querySelector(".post-Its");
-
-// //des arguments vont êter a rajouter à cette fonction au cours du développement par rapport à l'objet ou le tableau qui va nous servir de référence pour les modeles de post it
-// const createPostIt = () => {
-//     const postIt = document.createElementNS('div');
-//     postIt.classList.add("post-it");   
-//    //si on souhaite faire une image de fond type post-it générique pour notre post it, utiliser cette ligne, sinon voir ensemble comment faire 
-//    //postIt.style.backgroundImage = 
-//     postits.appendChild("postIt"); 
-
-// }
-
-
-// je clique sur le bouton ajouter une liste de taches
-
-
-// le menu déroulant se déroule en roulant
-
-// je survole le menu déroulant, cela met en surimprssion mon choix de la ligne
-
-// je clique sur un item du menu déroulant pour génerer une création d'un module de list
-// switch case 1 "module A": function creation de to do list (argument en fonction )
-// appel de la function création de to do list
-
-
-//
-
-
-
 //Tugba
 // Fonction pour afficher la date et l'heure
 function dateAndTime() {
@@ -94,14 +59,22 @@ dropdownBtn.addEventListener("click", function () {
 dropdownMenu.classList.toggle("visible");
 });
 
-// // Déclaration de Post-Its, la div qui prendra les autres posts its
+// Déclaration de Post-Its, la div qui prendra les autres posts its
 const postItsgroupe = document.querySelector(".post-its");
-const buttonUn = document.querySelector('.button1');
-const buttonOneInUse = true;
-// // cliquer sur le bouton ajouter une toDoList
-// // function création du premier post-it
-buttonUn.addEventListener('click', function() {
-     
+const buttonOne = document.querySelector('.button1');
+const buttonTwo = document.querySelector('.button2');
+const buttonThree = document.querySelector('.button3');
+const buttonFour = document.querySelector('.button4');
+
+//les constantes pour limiter l'usage d'une todo liste à une seule
+let buttonOneInUse = 0;
+let buttonTwoInUse = 0;
+let buttonThreeInUse = 0;
+let buttonFourInUse = 0;
+
+// function création du premier post-it
+buttonOne.addEventListener('click', function() {
+    if (buttonOneInUse == 0 ){
     // creer un element id dans le grand bloc des posts it
     const postitOne = document.createElement("div");
     postitOne.classList.add("post-it");
@@ -131,30 +104,9 @@ buttonUn.addEventListener('click', function() {
     const submitform = document.createElement("input");
     submitform.setAttribute("type", "submit");
     submitform.setAttribute("value", "send");
-
     postitFormOne.appendChild(submitform);    
 
-// creer une textarea
-
-// const txtPostitUn = document.createElement("textarea");
-    // txtPostitUn.classList.add("postitTxtUn");
-    // // remplir le form
-    // txtPostitUn.setAttribute("type", "text");
-    // txtPostitUn.setAttribute("name", "todoUn");
-    // txtPostitUn.setAttribute("placeholder", "Inscrivez une tâche ici");
-    // txtPostitUn.setAttribute("value", "");
-    // txtPostitUn.setAttribute("id", "todoinputUn");
-    // postitOne.appendChild(txtPostitUn);
-    // // creation button submit en dessous de textarea
-    // const textareaInputSubmit = document.createElement("input");
-    // textareaInputSubmit.setAttribute("type", "submit");
-    // textareaInputSubmit.setAttribute("value", "send");
-    // postitOne.appendChild(textareaInputSubmit);
-   
-
-
-    postitFormOne.appendChild(submitform);    
-//je recupere ses inputs
+    //je recupere ses inputs
     const toDoPostOne= document.querySelector('#formOne');
     const toDoInputLiOne = document.querySelector('#todoinputOne');
     const toDoListOne = document.querySelector('.tasklistOne');
@@ -162,16 +114,171 @@ buttonUn.addEventListener('click', function() {
     postitFormOne.onsubmit = function(event) {
     event.preventDefault();
     const newTodoListUn = document.createElement("li");
-    newTodoListUn.innerHTML = toDoInputLiOne.value;
+    newTodoListUn.innerHTML = (`<svg xmlns="http://www.w3.org/2000/svg" class="icons_val" x="0px" y="0px" width="1.5rem" height="1.5rem" viewBox="0 0 48 48">
+    <circle class="circle_icons" cx="28" cy="28" r="18.5" fill="#a5d6a7"></circle><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M35.4,38.8c-3.2,2.4-7.1,3.9-11.4,3.9C13.7,42.7,5.3,34.3,5.3,24c0-2.6,0.6-5.2,1.5-7.4"></path><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M12.1,9.6C15.3,7,19.5,5.3,24,5.3c10.3,0,18.7,8.4,18.7,18.7c0,2.3-0.4,4.5-1.2,6.6"></path><polyline fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" points="16.5,23.5 21.5,28.5 32,18"></polyline>
+    </svg> ${toDoInputLiOne.value}`);
     toDoListOne.appendChild(newTodoListUn);
     toDoInputLiOne.value = "";  
      };
 
- });
+buttonOneInUse += 1
+} else {
+    alert("Désolé Cher Utilisateur mais il n'est pas encore possible de créer plusieurs fois la même liste !");
+}
+
+
+});
+
+ // fonction bouton 2 dite urgente 
+
+ buttonTwo.addEventListener('click', function() {
+    if (buttonTwoInUse == 0 ){
+    // creer un element id dans le grand bloc des posts it
+    const postitTwo = document.createElement("div");
+    postitTwo.classList.add("post-it");
+    postItsgroupe.appendChild(postitTwo);
+    console.log('.postit');
+ // creer un tableau d'ul pour y mettre les li d'après
+     const taskListTwo = document.createElement('ul');
+     taskListTwo.classList.add("tasklistTwo")
+     postitTwo.appendChild(taskListTwo);
+//je cree une form 
+    const postitFormTwo = document.createElement("form");
+    postitFormTwo.setAttribute("id", "formTwo");
+    postitTwo.appendChild(postitFormTwo);
+// je lui donne un input avec setattribute et un input de validation
+    const inputFormTwo = document.createElement("input");
+    inputFormTwo.setAttribute("type", "text");
+    inputFormTwo.setAttribute("name", "todo");
+    inputFormTwo.setAttribute("placeholder", "tuez moi svp");
+    inputFormTwo.setAttribute("value", "");
+    inputFormTwo.setAttribute("id", "todoinputTwo");
+    postitFormTwo.appendChild(inputFormTwo);
+    const submitform = document.createElement("input");
+    submitform.setAttribute("type", "submit");
+    submitform.setAttribute("value", "send");
+    postitFormTwo.appendChild(submitform);    
+
+    //je recupere ses inputs
+    const toDoPostTwo= document.querySelector('#formTwo');
+    const toDoInputLiTwo = document.querySelector('#todoinputTwo');
+    const toDoListTwo = document.querySelector('.tasklistTwo');
+//je les transforme en un li dans ul
+    postitFormTwo.onsubmit = function(event) {
+    event.preventDefault();
+    const newTodoListTwo = document.createElement("li");
+    newTodoListTwo.innerHTML = toDoInputLiTwo.value;
+    toDoListTwo.appendChild(newTodoListTwo);
+    toDoInputLiTwo.value = "";  
+     };
+     buttonTwoInUse += 1
+} else {
+    alert("Désolé Cher Utilisateur mais il n'est pas encore possible de créer plusieurs fois la même liste !");
+}
+
+});
+
+ 
+ // fonction bouton 3
+
+ buttonThree.addEventListener('click', function() {
+    if (buttonThreeInUse == 0 ){
+    // creer un element id dans le grand bloc des posts it
+    const postitThree = document.createElement("div");
+    postitThree.classList.add("post-it");
+    postItsgroupe.appendChild(postitThree);
+    console.log('.postit');
+ // creer un tableau d'ul pour y mettre les li d'après
+     const taskListThree = document.createElement('ul');
+     taskListThree.classList.add("tasklistThree")
+     postitThree.appendChild(taskListThree);    
+//je cree une form 
+    const postitFormThree = document.createElement("form");
+    postitFormThree.setAttribute("id", "formThree");
+    postitThree.appendChild(postitFormThree);
+// je lui donne un input avec setattribute et un input de validation
+    const inputFormThree = document.createElement("input");
+    inputFormThree.setAttribute("type", "text");
+    inputFormThree.setAttribute("name", "todo");
+    inputFormThree.setAttribute("placeholder", "tuez moi svp");
+    inputFormThree.setAttribute("value", "");
+    inputFormThree.setAttribute("id", "todoinputThree");
+    postitFormThree.appendChild(inputFormThree);
+    const submitform = document.createElement("input");
+    submitform.setAttribute("type", "submit");
+    submitform.setAttribute("value", "send");
+    postitFormThree.appendChild(submitform);    
+
+    //je recupere ses inputs
+    const toDoPostThree= document.querySelector('#formThree');
+    const toDoInputLiThree = document.querySelector('#todoinputThree');
+    const toDoListThree = document.querySelector('.tasklistThree');
+//je les transforme en un li dans ul
+    postitFormThree.onsubmit = function(event) {
+    event.preventDefault();
+    const newTodoListThree = document.createElement("li");
+    newTodoListThree.innerHTML = toDoInputLiThree.value;
+    toDoListThree.appendChild(newTodoListThree);
+    toDoInputLiThree.value = "";  
+     };
+     buttonThreeInUse += 1
+} else {
+    alert("Désolé Cher Utilisateur mais il n'est pas encore possible de créer plusieurs fois la même liste !");
+}
+
+});
+
+// fonction bouton 4
+
+buttonFour.addEventListener('click', function() {
+if (buttonFourInUse == 0 ){
+     // creer un element id dans le grand bloc des posts it
+     const postitFour = document.createElement("div");
+     postitFour.classList.add("post-it");
+     postItsgroupe.appendChild(postitFour);
+     console.log('.postit');
+  // creer un tableau d'ul pour y mettre les li d'après
+      const taskListFour = document.createElement('ul');
+      taskListFour.classList.add("tasklistFour")
+      postitFour.appendChild(taskListFour);
+ //je cree une form 
+     const postitFormFour = document.createElement("form");
+     postitFormFour.setAttribute("id", "formThree");
+     postitFour.appendChild(postitFormFour);
+ // je lui donne un input avec setattribute et un input de validation
+     const inputFormFour = document.createElement("input");
+     inputFormFour.setAttribute("type", "text");
+     inputFormFour.setAttribute("name", "todo");
+     inputFormFour.setAttribute("placeholder", "tuez moi svp");
+     inputFormFour.setAttribute("value", "");
+     inputFormFour.setAttribute("id", "todoinputFour");
+     postitFormFour.appendChild(inputFormFour);
+     const submitform = document.createElement("input");
+     submitform.setAttribute("type", "submit");
+     submitform.setAttribute("value", "send");
+     postitFormFour.appendChild(submitform);    
+ 
+     //je recupere ses inputs
+     const toDoPostFour= document.querySelector('#formFour');
+     const toDoInputLiFour = document.querySelector('#todoinputFour');
+     const toDoListFour = document.querySelector('.tasklistFour');
+ //je les transforme en un li dans ul
+     postitFormFour.onsubmit = function(event) {
+     event.preventDefault();
+     const newTodoListFour = document.createElement("li");
+     newTodoListFour.innerHTML = toDoInputLiFour.value;
+     toDoListFour.appendChild(newTodoListFour);
+     toDoInputLiFour.value = "";  
+      };
+    buttonFourInUse += 1
+} else {
+    alert("Désolé Cher Utilisateur mais il n'est pas encore possible de créer plusieurs fois la même liste !");
+}
+
+});
 //pensez à incorporer une verification sur début de création
 //si on a déjà une liste créée, on envoie un texte a l'utilisateur
 //pour ça il faut créer une cosnt = true en fin de création et la faire verifier en début de
 
 // fonction création post-it tache urgente et title supprimé
 // const urgentTaskPostIt = () => {
-// const titleH1 = document.querySelector('.title-h1');
