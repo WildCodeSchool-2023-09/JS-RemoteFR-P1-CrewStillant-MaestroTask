@@ -19,9 +19,11 @@
 html, body {
   box-sizing: border-box;
   font-family: Courier New, Courier, 'monospace';
+  font-family: 'monospace';
+  padding: 0;
   margin: 0;
-  width: 100vw;
-  height: 100vw;
+  width: 100%;
+  height: 100%;
 }
 
 #littleBody {
@@ -29,13 +31,13 @@ html, body {
 }
 
 body {
-    background-color: #F7E1D7;
+  background-color: #F7E1D7;
 }
 
 .logo {
   text-align: left;
   background-color: #F7E1D7;
-  font-family: Courier New, Courier, 'monospace';
+  font-family: 'Courier New', Courier, monospace;
   margin: 0;
   padding: 0;
 }
@@ -73,6 +75,7 @@ header {
     text-align: center;
     margin-top: 20px;
     margin-right: 20px;
+
 }
 
 .mood img {
@@ -106,6 +109,39 @@ header {
     margin-top: 75px;
 }
 
+/*Style fleurs et plantes*/
+.flowers {
+    width: 60px;
+    height: 80px;
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.plants {
+    float: right;
+    transform: rotate(270deg);
+    margin-bottom: 0;
+    position: relative;
+    animation: moveOnSpot 2s infinite alternate;
+}
+
+/* Mouvement de la plantes*/
+@keyframes moveOnSpot {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(1deg);
+    }
+}
+
+footer {
+
+   bottom: 0;
+   width: 100%;
+}
+
 .content {
   text-align: center;
   padding: 20px 20px 40px 20px;
@@ -128,8 +164,7 @@ header {
 .dropdown-menu-content {
   display: none;
   list-style: none;
-  background-color: gold;
-  border: 0;
+  background-color: rgba(179, 154, 154, 0.123);
   width: 70px;
   text-align: center;
 }
@@ -139,12 +174,11 @@ header {
 }
 
 .visible {
-    font-family: Courier New, Courier, 'monospace';
-    display: block;
-    list-style: none;
-    background-color: gold;
-    width: 300px;
-    text-align: center;
+  display: block;
+  list-style: none;
+  background-color: rgb(246, 235, 146);
+  width: 70px;
+  text-align: center;
 }
 
 .post-it {
@@ -177,9 +211,8 @@ header {
   display: none;
 }
 
-
-.ul_btn {
-    width: 100%;
+ul {
+    width: 80%;
     height: 100%;
     /* display: flex;
     align-items: flex-start; */
@@ -187,44 +220,29 @@ header {
     padding: 4rem;
 }
 
-li {
-    list-style-type: none;
-}
-
 form {
     display: flex;
-    padding: 0;
-    flex-direction: column-reverse;
-    align-items: center;
     justify-content: center;
     padding: 4rem
+
 }
 
 .buttonadd {
-  font-size: 1rem;
-  font-weight: bold;
-  font-family: Courier New, Courier, 'monospace';
-  width: 300px;
-  background-color: gold;
+  background-color: rgb(246, 234, 0);
   display: flex;
   justify-content: center;
   flex-direction: column;
   border: 0;
-  align-items: center;
-  padding: 1rem 0;
-  box-shadow: 7px 10px 10px -1px #000000;
+  box-shadow: 7px 7px 10px 0px #000000;
 }
 
-.bts {
-    font-family: Courier New, Courier, 'monospace';
-    display: flex;
-    justify-content: center;
-    width: 300px;
-    background-color:  gold;
+.dropdown-menu-content {
+    background-color: rgb(246, 234, 0);
     border: 0;
-    padding: 0.8rem 0;
 }
-
+.visible {
+    display: block;
+}
 
 /* grid pour les posts it, class post-Its avec un de largeur */
 
@@ -243,24 +261,13 @@ form {
 .left_section{
     min-width: 48.5%;
 }
-
 .left_section div {
     min-width: 50%;
     font-size: 0.8rem;
 }
-
-#mfUp {
-    margin-left: 1.5rem;
-}
-
 #mfDown {
-    margin-left: 6.5rem;
+    margin-left: 4.5rem;
 }
-
-.text_footer_left {
-    margin-left: 1.5rem;
-}
-
 .dark_tray {
     min-width: 3px;
     max-width: 3px;
@@ -277,7 +284,6 @@ form {
     overflow: hidden;
 
 }
-
 .right_section div {
     min-width: 100%;
     font-size: 0.8rem;
@@ -294,10 +300,6 @@ form {
 .right_section div:nth-child(1) {
     padding-left: 1rem;
 }
-
-.circle_icons{
-    display: none;
-}
 /* Media query pour des écrans en dessous de 600px */
 @media screen and (max-width: 600px) {
     .right_section div {
@@ -313,16 +315,13 @@ form {
    }
 
     .mood img {
-        height: auto;
         width: 50px;
     }
 
     .logo img {
-        height: auto;
         width: 100px;
     }
 }
-
 
 @media screen and (max-width: 422px) {
 
@@ -344,14 +343,12 @@ form {
 /* Media query pour des écrans au-dessus de 1200px */
 @media screen and (min-width: 1200px) {
     /* Ajoutez vos styles pour les écrans au-dessus de 1200px ici */
-
 .post-its {
 display: grid;
 grid-template-columns: repeat(auto-fill, 30%);
 grid-gap: 3rem;
 padding-top: 4rem;
     }
-
 
 .post-it {
         box-shadow: 7px 7px 10px 0px #000000;
@@ -364,5 +361,4 @@ padding-top: 4rem;
         min-height: 20rem;
         max-width: 450px;
         }
-    
-    }
+}
