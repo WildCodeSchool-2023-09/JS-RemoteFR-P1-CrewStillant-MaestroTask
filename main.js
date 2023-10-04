@@ -1,4 +1,3 @@
-
 //Tugba
 // Fonction pour afficher la date et l'heure
 function dateAndTime() {
@@ -62,6 +61,7 @@ dropdownMenu.classList.toggle("visible");
 
 // Déclaration de Post-Its, la div qui prendra les autres posts its
 const postItsgroupe = document.querySelector(".post-its");
+const postItUrgent = document.querySelector(".title-h1");
 const buttonOne = document.querySelector('.button1');
 const buttonTwo = document.querySelector('.button2');
 const buttonThree = document.querySelector('.button3');
@@ -150,9 +150,11 @@ buttonOneInUse += 1;
     // creer un element id dans le grand bloc des posts it
     const postitTwo = document.createElement("div");
     postitTwo.classList.add("post-it");
-    postItsgroupe.appendChild(postitTwo);
+    postItUrgent.appendChild(postitTwo);
     console.log('.postit');
-    // je créé un bouton pour supprimer la to do list ensuite
+    
+
+ // creer un tableau d'ul pour y mettre les li d'après
     const removeButtonTwo= document.createElement('button');
     removeButtonTwo.classList.add("removeTwo");
     postitTwo.appendChild(removeButtonTwo);
@@ -302,4 +304,3 @@ if (buttonFourInUse == 0 ){
 }
 
 });
-

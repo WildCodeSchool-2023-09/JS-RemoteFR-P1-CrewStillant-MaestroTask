@@ -17,6 +17,8 @@
     }
 }
 html, body {
+  box-sizing: border-box;
+  font-family: Courier New, Courier, 'monospace';
   font-family: 'monospace';
   padding: 0;
   margin: 0;
@@ -24,8 +26,12 @@ html, body {
   height: 100%;
 }
 
+#littleBody {
+    padding-bottom: 25vh;
+}
+
 body {
-background-color: #F7E1D7;
+  background-color: #F7E1D7;
 }
 
 .logo {
@@ -68,10 +74,12 @@ header {
 .mood {
     text-align: center;
     margin-top: 20px;
+    margin-right: 20px;
+
 }
 
 .mood img {
-  width: 60px;
+  width: 80px;
   height: 80px;
   margin-right: 5px;
   margin-top: 20px;
@@ -136,7 +144,7 @@ footer {
 
 .content {
   text-align: center;
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
 }
 
 .title-h1 h1 {
@@ -241,10 +249,11 @@ form {
 /* ----------------------FOOTER STYLE------------------------------- */
 
 .footer_class {
+    position: fixed; bottom: 0;
     background-color: #EDAFB8;
     display: flex;
     width: 100%;
-    min-height: 15vh;
+    min-height: 10vh;
     max-height: max-content;
     font-family: 'Recursive', sans-serif;
 }
@@ -281,6 +290,13 @@ form {
     animation: slideName 40s linear infinite;
 }
 
+
+.right_section div>a {
+    text-decoration: none;
+    color: black;
+    line-height: 1rem;
+}
+
 .right_section div:nth-child(1) {
     padding-left: 1rem;
 }
@@ -307,6 +323,23 @@ form {
     }
 }
 
+@media screen and (max-width: 422px) {
+
+    .footer_class {
+        max-height: 15vh;
+    }
+
+    .mood img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .logo img {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
 /* Media query pour des écrans au-dessus de 1200px */
 @media screen and (min-width: 1200px) {
     /* Ajoutez vos styles pour les écrans au-dessus de 1200px ici */
@@ -316,7 +349,6 @@ grid-template-columns: repeat(auto-fill, 30%);
 grid-gap: 3rem;
 padding-top: 4rem;
     }
-
 
 .post-it {
         box-shadow: 7px 7px 10px 0px #000000;
@@ -329,18 +361,4 @@ padding-top: 4rem;
         min-height: 20rem;
         max-width: 450px;
         }
-
-    }
-
-@media screen and (max-width: 422px) {
-
-    .mood img {
-        width: 2rem;
-        height: 2rem;
-    }
-
-    .logo img {
-        width: 2rem;
-        height: 2rem;
-    }
 }
