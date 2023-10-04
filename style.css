@@ -1,4 +1,5 @@
 
+
 /* Par défaut, le site affiche les écrans mobiles 600px, first breakpoint 500px, 800px */
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway&family=Recursive&display=swap');
@@ -332,3 +333,19 @@ padding-top: 4rem;
         }
 
     }
+
+@media screen and (max-width: 422px) {
+
+    .mood img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .logo img {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+
+
