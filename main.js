@@ -1,4 +1,3 @@
-
 //Tugba
 // Fonction pour afficher la date et l'heure
 function dateAndTime() {
@@ -62,6 +61,7 @@ dropdownMenu.classList.toggle("visible");
 
 // Déclaration de Post-Its, la div qui prendra les autres posts its
 const postItsgroupe = document.querySelector(".post-its");
+const postItUrgent = document.querySelector(".title-h1");
 const buttonOne = document.querySelector('.button1');
 const buttonTwo = document.querySelector('.button2');
 const buttonThree = document.querySelector('.button3');
@@ -79,8 +79,13 @@ buttonOne.addEventListener('click', function() {
     // creer un element id dans le grand bloc des posts it
     const postitOne = document.createElement("div");
     postitOne.classList.add("post-it");
+    postitOne.classList.add("postremoveOne");
     postItsgroupe.appendChild(postitOne);
     console.log('.postit');
+    // je créé un bouton pour supprimer la to do list ensuite
+    const removeButtonOne = document.createElement('button');
+    removeButtonOne.classList.add("removeOne");
+    postitOne.appendChild(removeButtonOne);
  // creer un tableau d'ul pour y mettre les li d'après
      const taskListOne = document.createElement('ul');
      taskListOne.classList.add("tasklistOne")
@@ -121,12 +126,20 @@ buttonOne.addEventListener('click', function() {
     toDoListOne.appendChild(newTodoListUn);
     toDoInputLiOne.value = "";  
      };
+     //j'incrémente de 1 mon Butt'use pour qu'il se bloque
+buttonOneInUse += 1;
+    // j'écoute les clicks dessus et je supprime la div si jamais on le touche !
+    removeButtonOne.addEventListener('click', function () {const divtoremoveOne = document.querySelectorAll('.postremoveOne');
+    divtoremoveOne.forEach(postremoveOne => {
+     postremoveOne.remove();
+     buttonOneInUse -= 1;})});
 
-buttonOneInUse += 1
+    
+    
+
 } else {
     alert("Désolé Cher Utilisateur mais il n'est pas encore possible de créer plusieurs fois la même liste !");
 }
-
 
 });
 
@@ -137,17 +150,23 @@ buttonOneInUse += 1
     // creer un element id dans le grand bloc des posts it
     const postitTwo = document.createElement("div");
     postitTwo.classList.add("post-it");
-    postItsgroupe.appendChild(postitTwo);
+    postItUrgent.appendChild(postitTwo);
     console.log('.postit');
+    
+
  // creer un tableau d'ul pour y mettre les li d'après
+    const removeButtonTwo= document.createElement('button');
+    removeButtonTwo.classList.add("removeTwo");
+    postitTwo.appendChild(removeButtonTwo);
+    // creer un tableau d'ul pour y mettre les li d'après
      const taskListTwo = document.createElement('ul');
      taskListTwo.classList.add("tasklistTwo")
      postitTwo.appendChild(taskListTwo);
-//je cree une form 
+    //je cree une form 
     const postitFormTwo = document.createElement("form");
     postitFormTwo.setAttribute("id", "formTwo");
     postitTwo.appendChild(postitFormTwo);
-// je lui donne un input avec setattribute et un input de validation
+    // je lui donne un input avec setattribute et un input de validation
     const inputFormTwo = document.createElement("input");
     inputFormTwo.setAttribute("type", "text");
     inputFormTwo.setAttribute("name", "todo");
@@ -189,6 +208,10 @@ buttonOneInUse += 1
     postitThree.classList.add("post-it");
     postItsgroupe.appendChild(postitThree);
     console.log('.postit');
+    // je créé un bouton pour supprimer la to do list ensuite
+    const removeButtonThree= document.createElement('button');
+    removeButtonThree.classList.add("removeThree");
+    postitThree.appendChild(removeButtonThree);
  // creer un tableau d'ul pour y mettre les li d'après
      const taskListThree = document.createElement('ul');
      taskListThree.classList.add("tasklistThree")
@@ -238,6 +261,10 @@ if (buttonFourInUse == 0 ){
      postitFour.classList.add("post-it");
      postItsgroupe.appendChild(postitFour);
      console.log('.postit');
+     // je créé un bouton pour supprimer la to do list ensuite
+    const removeButtonFour= document.createElement('button');
+    removeButtonFour.classList.add("removeFour");
+    postitFour.appendChild(removeButtonFour);
   // creer un tableau d'ul pour y mettre les li d'après
       const taskListFour = document.createElement('ul');
       taskListFour.classList.add("tasklistFour")
@@ -277,9 +304,3 @@ if (buttonFourInUse == 0 ){
 }
 
 });
-//pensez à incorporer une verification sur début de création
-//si on a déjà une liste créée, on envoie un texte a l'utilisateur
-//pour ça il faut créer une cosnt = true en fin de création et la faire verifier en début de
-
-// fonction création post-it tache urgente et title supprimé
-// const urgentTaskPostIt = () => {
