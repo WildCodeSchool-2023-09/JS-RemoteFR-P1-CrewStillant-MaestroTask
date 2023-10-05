@@ -17,8 +17,6 @@
     }
 }
 html, body {
-  box-sizing: border-box;
-  font-family: Courier New, Courier, 'monospace';
   font-family: 'monospace';
   padding: 0;
   margin: 0;
@@ -26,12 +24,8 @@ html, body {
   height: 100%;
 }
 
-#littleBody {
-    padding-bottom: 25vh;
-}
-
 body {
-  background-color: #F7E1D7;
+background-color: #F7E1D7;
 }
 
 .logo {
@@ -229,10 +223,6 @@ ul {
     padding: 4rem;
 }
 
-li {
-    list-style-type: none;
-}
-
 form {
     display: flex;
     justify-content: center;
@@ -374,4 +364,18 @@ padding-top: 4rem;
         min-height: 20rem;
         max-width: 450px;
         }
+
+    }
+
+@media screen and (max-width: 422px) {
+
+    .mood img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .logo img {
+        width: 2rem;
+        height: 2rem;
+    }
 }
