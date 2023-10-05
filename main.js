@@ -37,21 +37,6 @@ emojis.forEach(emoji => {
 
 //QUENTIN
 
-// fonction PopUp
-
-// function popUp(){
-//     const popup = document.createElement('div');
-//     popup.classList.add("popup");
-//     popup.setAttribute("id", "test");
-//     const cancel = document.createElement('div');
-//     cancel.classList.add("cancel");
-//     cancel.innerHTML = 'close';
-//     cancel.onclick = function (e) { popup.parentNode.removeChild(popup) };
-//     const message = document.createElement('span');
-//     message.innerHTML = "Cette liste est déjà affichée sur votre page";
-//     popup.appendChild(message);                                    
-//     popup.appendChild(cancel);
-//     document.body.appendChild(popup);
 // le menu déroulant en appuyant sur le bouton Ajouter une checklist
 const dropdownBtn = document.querySelector(".dropdown-btn");
 const dropdownMenu = document.querySelector('.dropdown-menu-content');
@@ -85,6 +70,12 @@ buttonOne.addEventListener('click', function() {
     const removeButtonOne = document.createElement('button');
     removeButtonOne.classList.add("removeOne");
     postitOne.appendChild(removeButtonOne);
+    // j'écoute les clicks dessus et je supprime la div si jamais on le touche !
+    removeButtonOne.addEventListener('click', function () 
+    {const divtoremoveOne = document.querySelectorAll('.postremoveOne');
+    divtoremoveOne.forEach(postremoveOne => {
+     postremoveOne.remove();
+     buttonOneInUse -= 1;})});
  // creer un tableau d'ul pour y mettre les li d'après
      const taskListOne = document.createElement('ul');
      taskListOne.classList.add("tasklistOne")
@@ -127,15 +118,7 @@ buttonOne.addEventListener('click', function() {
      };
      //j'incrémente de 1 mon Butt'use pour qu'il se bloque
 buttonOneInUse += 1;
-    // j'écoute les clicks dessus et je supprime la div si jamais on le touche !
-    removeButtonOne.addEventListener('click', function () {const divtoremoveOne = document.querySelectorAll('.postremoveOne');
-    divtoremoveOne.forEach(postremoveOne => {
-     postremoveOne.remove();
-     buttonOneInUse -= 1;})});
-
     
-    
-
 } else {
     alert("Désolé Cher Utilisateur mais il n'est pas encore possible de créer plusieurs fois la même liste !");
 }
@@ -149,12 +132,19 @@ buttonOneInUse += 1;
     // creer un element id dans le grand bloc des posts it
     const postitTwo = document.createElement("div");
     postitTwo.classList.add("post-it");
+    postitTwo.classList.add("postremoveTwo");
     postItsgroupe.appendChild(postitTwo);
     console.log('.postit');
     // je créé un bouton pour supprimer la to do list ensuite
-    const removeButtonTwo= document.createElement('button');
+    const removeButtonTwo = document.createElement('button');
     removeButtonTwo.classList.add("removeTwo");
     postitTwo.appendChild(removeButtonTwo);
+    // j'écoute les clicks dessus et je supprime la div si jamais on le touche !
+    removeButtonTwo.addEventListener('click', function () 
+    {const divtoremoveTwo = document.querySelectorAll('.postremoveTwo');
+    divtoremoveTwo.forEach(postremoveTwo => {
+     postremoveTwo.remove();
+     buttonTwoInUse -= 1;})});
     // creer un tableau d'ul pour y mettre les li d'après
      const taskListTwo = document.createElement('ul');
      taskListTwo.classList.add("tasklistTwo")
@@ -185,7 +175,9 @@ buttonOneInUse += 1;
     event.preventDefault();
     const newTodoListTwo = document.createElement("li");
     newTodoListTwo.innerHTML = toDoInputLiTwo.value;
-    toDoListTwo.appendChild(newTodoListTwo);
+    newTodoListUn.innerHTML = (`<svg xmlns="http://www.w3.org/2000/svg" class="icons_val" x="0px" y="0px" width="1.5rem" height="1.5rem" viewBox="0 0 48 48">
+    <circle class="circle_icons" cx="28" cy="28" r="18.5" fill="#a5d6a7"></circle><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M35.4,38.8c-3.2,2.4-7.1,3.9-11.4,3.9C13.7,42.7,5.3,34.3,5.3,24c0-2.6,0.6-5.2,1.5-7.4"></path><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M12.1,9.6C15.3,7,19.5,5.3,24,5.3c10.3,0,18.7,8.4,18.7,18.7c0,2.3-0.4,4.5-1.2,6.6"></path><polyline fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" points="16.5,23.5 21.5,28.5 32,18"></polyline>
+    </svg> ${toDoInputLiTwo.value}`);
     toDoInputLiTwo.value = "";  
      };
      buttonTwoInUse += 1
@@ -203,21 +195,28 @@ buttonOneInUse += 1;
     // creer un element id dans le grand bloc des posts it
     const postitThree = document.createElement("div");
     postitThree.classList.add("post-it");
+    postitThree.classList.add("postremoveThree");
     postItsgroupe.appendChild(postitThree);
     console.log('.postit');
     // je créé un bouton pour supprimer la to do list ensuite
-    const removeButtonThree= document.createElement('button');
+    const removeButtonThree = document.createElement('button');
     removeButtonThree.classList.add("removeThree");
     postitThree.appendChild(removeButtonThree);
- // creer un tableau d'ul pour y mettre les li d'après
+    // j'écoute les clicks dessus et je supprime la div si jamais on le touche !
+    removeButtonThree.addEventListener('click', function () 
+    {const divtoremoveThree = document.querySelectorAll('.postremoveThree');
+    divtoremoveThree.forEach(postremoveThree => {
+    postremoveThree.remove();
+    buttonThreeInUse -= 1;})});
+    // creer un tableau d'ul pour y mettre les li d'après
      const taskListThree = document.createElement('ul');
      taskListThree.classList.add("tasklistThree")
      postitThree.appendChild(taskListThree);    
-//je cree une form 
+    //je cree une form 
     const postitFormThree = document.createElement("form");
     postitFormThree.setAttribute("id", "formThree");
     postitThree.appendChild(postitFormThree);
-// je lui donne un input avec setattribute et un input de validation
+    // je lui donne un input avec setattribute et un input de validation
     const inputFormThree = document.createElement("input");
     inputFormThree.setAttribute("type", "text");
     inputFormThree.setAttribute("name", "todo");
@@ -234,19 +233,21 @@ buttonOneInUse += 1;
     const toDoPostThree= document.querySelector('#formThree');
     const toDoInputLiThree = document.querySelector('#todoinputThree');
     const toDoListThree = document.querySelector('.tasklistThree');
-//je les transforme en un li dans ul
+    //je les transforme en un li dans ul
     postitFormThree.onsubmit = function(event) {
     event.preventDefault();
     const newTodoListThree = document.createElement("li");
-    newTodoListThree.innerHTML = toDoInputLiThree.value;
+    newTodoListUn.innerHTML = (`<svg xmlns="http://www.w3.org/2000/svg" class="icons_val" x="0px" y="0px" width="1.5rem" height="1.5rem" viewBox="0 0 48 48">
+    <circle class="circle_icons" cx="28" cy="28" r="18.5" fill="#a5d6a7"></circle><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M35.4,38.8c-3.2,2.4-7.1,3.9-11.4,3.9C13.7,42.7,5.3,34.3,5.3,24c0-2.6,0.6-5.2,1.5-7.4"></path><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M12.1,9.6C15.3,7,19.5,5.3,24,5.3c10.3,0,18.7,8.4,18.7,18.7c0,2.3-0.4,4.5-1.2,6.6"></path><polyline fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" points="16.5,23.5 21.5,28.5 32,18"></polyline>
+    </svg> ${toDoInputLiThree.value}`); 
     toDoListThree.appendChild(newTodoListThree);
     toDoInputLiThree.value = "";  
      };
-     buttonThreeInUse += 1
+     buttonThreeInUse += 1;
+    
 } else {
     alert("Désolé Cher Utilisateur mais il n'est pas encore possible de créer plusieurs fois la même liste !");
 }
-
 });
 
 // fonction bouton 4
@@ -256,13 +257,20 @@ if (buttonFourInUse == 0 ){
      // creer un element id dans le grand bloc des posts it
      const postitFour = document.createElement("div");
      postitFour.classList.add("post-it");
+     postitFour.classList.add("postremoveFour");
      postItsgroupe.appendChild(postitFour);
      console.log('.postit');
      // je créé un bouton pour supprimer la to do list ensuite
-    const removeButtonFour= document.createElement('button');
+    const removeButtonFour = document.createElement('button');
     removeButtonFour.classList.add("removeFour");
     postitFour.appendChild(removeButtonFour);
-  // creer un tableau d'ul pour y mettre les li d'après
+    // j'écoute les clicks dessus et je supprime la div si jamais on le touche !
+    removeButtonFour.addEventListener('click', function () 
+    {const divtoremoveFour = document.querySelectorAll('.postremoveFour');
+    divtoremoveFour.forEach(postremoveFour => {
+     postremoveFour.remove();
+     buttonFourInUse -= 1;})});
+     // creer un tableau d'ul pour y mettre les li d'après
       const taskListFour = document.createElement('ul');
       taskListFour.classList.add("tasklistFour")
       postitFour.appendChild(taskListFour);
@@ -291,11 +299,14 @@ if (buttonFourInUse == 0 ){
      postitFormFour.onsubmit = function(event) {
      event.preventDefault();
      const newTodoListFour = document.createElement("li");
-     newTodoListFour.innerHTML = toDoInputLiFour.value;
+     newTodoListUn.innerHTML = (`<svg xmlns="http://www.w3.org/2000/svg" class="icons_val" x="0px" y="0px" width="1.5rem" height="1.5rem" viewBox="0 0 48 48">
+    <circle class="circle_icons" cx="28" cy="28" r="18.5" fill="#a5d6a7"></circle><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M35.4,38.8c-3.2,2.4-7.1,3.9-11.4,3.9C13.7,42.7,5.3,34.3,5.3,24c0-2.6,0.6-5.2,1.5-7.4"></path><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M12.1,9.6C15.3,7,19.5,5.3,24,5.3c10.3,0,18.7,8.4,18.7,18.7c0,2.3-0.4,4.5-1.2,6.6"></path><polyline fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" points="16.5,23.5 21.5,28.5 32,18"></polyline>
+    </svg> ${toDoInputLiFour.value}`);
      toDoListFour.appendChild(newTodoListFour);
      toDoInputLiFour.value = "";  
       };
-    buttonFourInUse += 1
+    buttonFourInUse += 1;
+     
 } else {
     alert("Désolé Cher Utilisateur mais il n'est pas encore possible de créer plusieurs fois la même liste !");
 }

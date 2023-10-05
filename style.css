@@ -17,29 +17,33 @@
     }
 }
 html, body {
+  box-sizing: border-box;
   font-family: Courier New, Courier, 'monospace';
+  font-family: 'monospace';
+  padding: 0;
   margin: 0;
-  width: 100vw;
-  height: 100vw;
+  width: 100%;
+  height: 100%;
+}
+
+#littleBody {
+    padding-bottom: 25vh;
 }
 
 body {
-    padding-bottom: 15vh;
-    position: relative;
-    background-color: #F7E1D7;
+  background-color: #F7E1D7;
 }
 
 .logo {
   text-align: left;
   background-color: #F7E1D7;
-  font-family: Courier New, Courier, 'monospace';
+  font-family: 'Courier New', Courier, monospace;
   margin: 0;
   padding: 0;
 }
 
 /* Styles du header */
 header {
-    position: absolute; top: 0;
     color: black;
     font-family: monospace;
     font-size: 18px;
@@ -70,11 +74,12 @@ header {
 .mood {
     text-align: center;
     margin-top: 20px;
-    
+    margin-right: 20px;
+
 }
 
 .mood img {
-  width: 60px;
+  width: 80px;
   height: 80px;
   margin-right: 5px;
   margin-top: 20px;
@@ -104,9 +109,51 @@ header {
     margin-top: 75px;
 }
 
+/*Style fleurs et plantes*/
+.flowers {
+    width: 60px;
+    height: 80px;
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.plants {
+    float: right;
+    transform: rotate(270deg);
+    margin-bottom: 0;
+    position: relative;
+    animation: moveOnSpot 2s infinite alternate;
+}
+
+/* Mouvement de la plantes*/
+@keyframes moveOnSpot {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(1deg);
+    }
+}
+
+footer {
+
+   bottom: 0;
+   width: 100%;
+}
+
+.removeFour, .removeThree, .removeTwo, .removeOne {
+    margin-left: 90%;
+    margin-top: 5%;
+    width: 1rem;
+    height: 1rem;
+    background-color: rgb(246, 250, 242);
+    box-shadow: 3px 3px 6px 0px #000000;
+    background-color: #F7E1D7;
+}
 .content {
   text-align: center;
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
 }
 
 .title-h1 h1 {
@@ -126,8 +173,7 @@ header {
 .dropdown-menu-content {
   display: none;
   list-style: none;
-  background-color: gold;
-  border: 0;
+  background-color: rgba(179, 154, 154, 0.123);
   width: 70px;
   text-align: center;
 }
@@ -137,12 +183,11 @@ header {
 }
 
 .visible {
-    font-family: Courier New, Courier, 'monospace';
-    display: block;
-    list-style: none;
-    background-color: gold;
-    width: 300px;
-    text-align: center;
+  display: block;
+  list-style: none;
+  background-color: rgb(246, 235, 146);
+  width: 70px;
+  text-align: center;
 }
 
 .post-it {
@@ -175,9 +220,8 @@ header {
   display: none;
 }
 
-
-.ul_btn {
-    width: 100%;
+ul {
+    width: 80%;
     height: 100%;
     /* display: flex;
     align-items: flex-start; */
@@ -191,49 +235,38 @@ li {
 
 form {
     display: flex;
-    padding: 0;
-    flex-direction: column-reverse;
-    align-items: center;
     justify-content: center;
     padding: 4rem
+
 }
 
 .buttonadd {
-  font-size: 1rem;
-  font-weight: bold;
-  font-family: Courier New, Courier, 'monospace';
-  width: 300px;
-  background-color: gold;
+  background-color: rgb(246, 234, 0);
   display: flex;
   justify-content: center;
   flex-direction: column;
   border: 0;
-  align-items: center;
-  padding: 1rem 0;
-  box-shadow: 7px 10px 10px -1px #000000;
+  box-shadow: 7px 7px 10px 0px #000000;
 }
 
-.bts {
-    font-family: Courier New, Courier, 'monospace';
-    display: flex;
-    justify-content: center;
-    width: 300px;
-    background-color:  gold;
+.dropdown-menu-content {
+    background-color: rgb(246, 234, 0);
     border: 0;
-    padding: 0.8rem 0;
 }
-
+.visible {
+    display: block;
+}
 
 /* grid pour les posts it, class post-Its avec un de largeur */
 
 /* ----------------------FOOTER STYLE------------------------------- */
 
 .footer_class {
+    position: fixed; bottom: 0;
     background-color: #EDAFB8;
-    position: absolute; bottom: 0;
     display: flex;
     width: 100%;
-    min-height: 15vh;
+    min-height: 10vh;
     max-height: max-content;
     font-family: 'Recursive', sans-serif;
 }
@@ -241,24 +274,13 @@ form {
 .left_section{
     min-width: 48.5%;
 }
-
 .left_section div {
     min-width: 50%;
     font-size: 0.8rem;
 }
-
-#mfUp {
-    margin-left: 1.5rem;
-}
-
 #mfDown {
-    margin-left: 6.5rem;
+    margin-left: 4.5rem;
 }
-
-.text_footer_left {
-    margin-left: 1.5rem;
-}
-
 .dark_tray {
     min-width: 3px;
     max-width: 3px;
@@ -275,19 +297,21 @@ form {
     overflow: hidden;
 
 }
-
 .right_section div {
     min-width: 100%;
     font-size: 0.8rem;
     animation: slideName 40s linear infinite;
 }
 
-.right_section div:nth-child(1) {
-    padding-left: 1rem;
+
+.right_section div>a {
+    text-decoration: none;
+    color: black;
+    line-height: 1rem;
 }
 
-.circle_icons{
-    display: none;
+.right_section div:nth-child(1) {
+    padding-left: 1rem;
 }
 /* Media query pour des écrans en dessous de 600px */
 @media screen and (max-width: 600px) {
@@ -304,13 +328,28 @@ form {
    }
 
     .mood img {
-        height: auto;
         width: 50px;
     }
 
     .logo img {
-        height: auto;
         width: 100px;
+    }
+}
+
+@media screen and (max-width: 422px) {
+
+    .footer_class {
+        max-height: 15vh;
+    }
+
+    .mood img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .logo img {
+        width: 2rem;
+        height: 2rem;
     }
 }
 
@@ -324,7 +363,6 @@ grid-gap: 3rem;
 padding-top: 4rem;
     }
 
-
 .post-it {
         box-shadow: 7px 7px 10px 0px #000000;
         background-color: rgb(246, 235, 146); 
@@ -337,17 +375,3 @@ padding-top: 4rem;
         max-width: 450px;
         }
 }
-
-@media screen and (max-width: 422px) {
-
-    .mood img {
-        width: 2rem;
-        height: 2rem;
-    }
-
-    .logo img {
-        width: 2rem;
-        height: 2rem;
-    }
-}
-    
