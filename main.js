@@ -46,10 +46,14 @@ dropdownMenu.classList.toggle("visible");
 
 // Déclaration de Post-Its, la div qui prendra les autres posts its
 const postItsgroupe = document.querySelector(".post-its");
+const postItUrgent = document.querySelector(".title-h1");
 const buttonOne = document.querySelector('.button1');
 const buttonTwo = document.querySelector('.button2');
 const buttonThree = document.querySelector('.button3');
 const buttonFour = document.querySelector('.button4');
+const checkForm = `<svg xmlns="http://www.w3.org/2000/svg" class="icons_val" x="0px" y="0px" width="1.5rem" height="1.5rem" viewBox="0 0 48 48">
+    <circle class="circle_icons" cx="28" cy="28" r="18.5" fill="#a5d6a7"></circle><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M35.4,38.8c-3.2,2.4-7.1,3.9-11.4,3.9C13.7,42.7,5.3,34.3,5.3,24c0-2.6,0.6-5.2,1.5-7.4"></path><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M12.1,9.6C15.3,7,19.5,5.3,24,5.3c10.3,0,18.7,8.4,18.7,18.7c0,2.3-0.4,4.5-1.2,6.6"></path><polyline fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" points="16.5,23.5 21.5,28.5 32,18"></polyline>
+    </svg>`;
 
 //les constantes pour limiter l'usage d'une todo liste à une seule
 let buttonOneInUse = 0;
@@ -80,11 +84,7 @@ buttonOne.addEventListener('click', function() {
      const taskListOne = document.createElement('ul');
      taskListOne.classList.add("tasklistOne")
      postitOne.appendChild(taskListOne);
-     //test pour voir si je peux remplir ou afficher mes li dans ul
-    //  const listeLiOne = document.createElement('li');
-    //  listeLiOne.innerHTML = "tuez moi rien n'a de sens";
-    //  taskListOne.appendChild(listeLiOne); 
-
+ 
 //je cree une form 
     const postitFormOne = document.createElement("form");
     postitFormOne.setAttribute("id", "formOne");
@@ -93,7 +93,7 @@ buttonOne.addEventListener('click', function() {
     const inputFormOne = document.createElement("input");
     inputFormOne.setAttribute("type", "text");
     inputFormOne.setAttribute("name", "todo");
-    inputFormOne.setAttribute("placeholder", "tuez moi svp");
+    inputFormOne.setAttribute("placeholder", "votre texte");
     inputFormOne.setAttribute("value", "");
     inputFormOne.setAttribute("id", "todoinputOne");
     postitFormOne.appendChild(inputFormOne);
@@ -106,17 +106,20 @@ buttonOne.addEventListener('click', function() {
     const toDoPostOne= document.querySelector('#formOne');
     const toDoInputLiOne = document.querySelector('#todoinputOne');
     const toDoListOne = document.querySelector('.tasklistOne');
-//je les transforme en un li dans ul
-    postitFormOne.onsubmit = function(event) {
-    event.preventDefault();
-    const newTodoListUn = document.createElement("li");
-    newTodoListUn.innerHTML = (`<svg xmlns="http://www.w3.org/2000/svg" class="icons_val" x="0px" y="0px" width="1.5rem" height="1.5rem" viewBox="0 0 48 48">
-    <circle class="circle_icons" cx="28" cy="28" r="18.5" fill="#a5d6a7"></circle><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M35.4,38.8c-3.2,2.4-7.1,3.9-11.4,3.9C13.7,42.7,5.3,34.3,5.3,24c0-2.6,0.6-5.2,1.5-7.4"></path><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M12.1,9.6C15.3,7,19.5,5.3,24,5.3c10.3,0,18.7,8.4,18.7,18.7c0,2.3-0.4,4.5-1.2,6.6"></path><polyline fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" points="16.5,23.5 21.5,28.5 32,18"></polyline>
-    </svg> ${toDoInputLiOne.value}`);
-    toDoListOne.appendChild(newTodoListUn);
-    toDoInputLiOne.value = "";  
-     };
-     //j'incrémente de 1 mon Butt'use pour qu'il se bloque
+    //je les transforme en un li dans ul
+        postitFormOne.onsubmit = function (event) {
+            event.preventDefault();
+            const newTodoListUn = document.createElement("li");
+            if (toDoInputLiOne.value.trim() !== "") {
+                newTodoListUn.innerHTML = (`${checkForm} ${toDoInputLiOne.value}`);
+                toDoListOne.appendChild(newTodoListUn);
+                toDoInputLiOne.value = "";
+            }
+            else {
+                return "Can't send"
+            }
+        }
+    //j'incrémente de 1 mon Butt'use pour qu'il se bloque
 buttonOneInUse += 1;
     
 } else {
@@ -125,61 +128,66 @@ buttonOneInUse += 1;
 
 });
 
+
  // fonction bouton 2 dite urgente 
 
  buttonTwo.addEventListener('click', function() {
-    if (buttonTwoInUse == 0 ){
-    // creer un element id dans le grand bloc des posts it
-    const postitTwo = document.createElement("div");
-    postitTwo.classList.add("post-it");
-    postitTwo.classList.add("postremoveTwo");
-    postItsgroupe.appendChild(postitTwo);
-    console.log('.postit');
-    // je créé un bouton pour supprimer la to do list ensuite
-    const removeButtonTwo = document.createElement('button');
-    removeButtonTwo.classList.add("removeTwo");
-    postitTwo.appendChild(removeButtonTwo);
-    // j'écoute les clicks dessus et je supprime la div si jamais on le touche !
-    removeButtonTwo.addEventListener('click', function () 
-    {const divtoremoveTwo = document.querySelectorAll('.postremoveTwo');
-    divtoremoveTwo.forEach(postremoveTwo => {
-     postremoveTwo.remove();
-     buttonTwoInUse -= 1;})});
-    // creer un tableau d'ul pour y mettre les li d'après
-     const taskListTwo = document.createElement('ul');
-     taskListTwo.classList.add("tasklistTwo")
-     postitTwo.appendChild(taskListTwo);
-    //je cree une form 
-    const postitFormTwo = document.createElement("form");
-    postitFormTwo.setAttribute("id", "formTwo");
-    postitTwo.appendChild(postitFormTwo);
-    // je lui donne un input avec setattribute et un input de validation
-    const inputFormTwo = document.createElement("input");
-    inputFormTwo.setAttribute("type", "text");
-    inputFormTwo.setAttribute("name", "todo");
-    inputFormTwo.setAttribute("placeholder", "tuez moi svp");
-    inputFormTwo.setAttribute("value", "");
-    inputFormTwo.setAttribute("id", "todoinputTwo");
-    postitFormTwo.appendChild(inputFormTwo);
-    const submitform = document.createElement("input");
-    submitform.setAttribute("type", "submit");
-    submitform.setAttribute("value", "send");
-    postitFormTwo.appendChild(submitform);    
+     if (buttonTwoInUse == 0) {
+         // creer un element id dans ld div du H1
+         const postitTwo = document.createElement("div");
+         postitTwo.classList.add("post-itU");
+         postItUrgent.innerHTML = "<h1>Tâche urgente</h1>";
+         postItUrgent.classList.toggle("visible2");
+         postItUrgent.appendChild(postitTwo);
+        
+         // je créé un bouton pour supprimer la to do list ensuite
+         const removeButtonTwo = document.createElement('button');
+         removeButtonTwo.classList.add("removeTwo");
+         postitTwo.appendChild(removeButtonTwo);
+         // j'écoute les clicks dessus et je supprime la div si jamais on le touche !
+         removeButtonTwo.addEventListener('click', function () {
+             const divtoremoveTwo = document.querySelectorAll('.postremoveTwo');
+             divtoremoveTwo.forEach(postremoveTwo => {
+                 postremoveTwo.remove();
+                 buttonTwoInUse -= 1;
+             })
+         });
+        
+         // creer un tableau d'ul pour y mettre les li d'après
+         const taskListTwo = document.createElement('ul');
+         taskListTwo.classList.add("tasklistTwo");
+         taskListTwo.setAttribute("id", "tasklistTwo");
+         postitTwo.appendChild(taskListTwo);
+         //je cree une form 
+         const postitFormTwo = document.createElement("form");
+         postitFormTwo.setAttribute("id", "formTwo");
+         postitTwo.appendChild(postitFormTwo);
+         // je lui donne un input avec setattribute et un input de validation
+         const inputFormTwo = document.createElement("input");
+         inputFormTwo.setAttribute("type", "text");
+         inputFormTwo.setAttribute("name", "todo");
+         inputFormTwo.setAttribute("placeholder", "votre texte");
+         inputFormTwo.setAttribute("value", "");
+         inputFormTwo.setAttribute("id", "todoinputTwo");
+         postitFormTwo.appendChild(inputFormTwo);
+         const submitform = document.createElement("input");
+         submitform.setAttribute("type", "submit");
+         submitform.setAttribute("value", "send");
+         postitFormTwo.appendChild(submitform);
 
-    //je recupere ses inputs
-    const toDoPostTwo= document.querySelector('#formTwo');
-    const toDoInputLiTwo = document.querySelector('#todoinputTwo');
-    const toDoListTwo = document.querySelector('.tasklistTwo');
-//je les transforme en un li dans ul
-    postitFormTwo.onsubmit = function(event) {
-    event.preventDefault();
-    const newTodoListTwo = document.createElement("li");
-    newTodoListTwo.innerHTML = toDoInputLiTwo.value;
-    newTodoListUn.innerHTML = (`<svg xmlns="http://www.w3.org/2000/svg" class="icons_val" x="0px" y="0px" width="1.5rem" height="1.5rem" viewBox="0 0 48 48">
-    <circle class="circle_icons" cx="28" cy="28" r="18.5" fill="#a5d6a7"></circle><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M35.4,38.8c-3.2,2.4-7.1,3.9-11.4,3.9C13.7,42.7,5.3,34.3,5.3,24c0-2.6,0.6-5.2,1.5-7.4"></path><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M12.1,9.6C15.3,7,19.5,5.3,24,5.3c10.3,0,18.7,8.4,18.7,18.7c0,2.3-0.4,4.5-1.2,6.6"></path><polyline fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" points="16.5,23.5 21.5,28.5 32,18"></polyline>
-    </svg> ${toDoInputLiTwo.value}`);
-    toDoInputLiTwo.value = "";  
-     };
+         //je recupere ses inputs
+         const toDoPostTwo = document.querySelector('#formTwo');
+         const toDoInputLiTwo = document.querySelector('#todoinputTwo');
+         const toDoListTwo = document.querySelector('.tasklistTwo');
+         //je les transforme en un li dans ul
+         postitFormTwo.onsubmit = function (event) {
+             event.preventDefault();
+             const newTodoListTwo = document.createElement("li");
+             newTodoListTwo.innerHTML = (`${checkForm} ${toDoInputLiTwo.value}`);
+             toDoListTwo.appendChild(newTodoListTwo);
+             toDoInputLiOne.value = "";
+         }
+    //j'incrémente de 1 mon Butt'use pour qu'il se bloque
      buttonTwoInUse += 1
 } else {
     alert("Désolé Cher Utilisateur mais il n'est pas encore possible de créer plusieurs fois la même liste !");
@@ -197,7 +205,7 @@ buttonOneInUse += 1;
     postitThree.classList.add("post-it");
     postitThree.classList.add("postremoveThree");
     postItsgroupe.appendChild(postitThree);
-    console.log('.postit');
+
     // je créé un bouton pour supprimer la to do list ensuite
     const removeButtonThree = document.createElement('button');
     removeButtonThree.classList.add("removeThree");
@@ -212,15 +220,15 @@ buttonOneInUse += 1;
      const taskListThree = document.createElement('ul');
      taskListThree.classList.add("tasklistThree")
      postitThree.appendChild(taskListThree);    
-    //je cree une form 
+//je cree une form 
     const postitFormThree = document.createElement("form");
     postitFormThree.setAttribute("id", "formThree");
     postitThree.appendChild(postitFormThree);
-    // je lui donne un input avec setattribute et un input de validation
+// je lui donne un input avec setattribute et un input de validation
     const inputFormThree = document.createElement("input");
     inputFormThree.setAttribute("type", "text");
     inputFormThree.setAttribute("name", "todo");
-    inputFormThree.setAttribute("placeholder", "tuez moi svp");
+    inputFormThree.setAttribute("placeholder", "votre texte");
     inputFormThree.setAttribute("value", "");
     inputFormThree.setAttribute("id", "todoinputThree");
     postitFormThree.appendChild(inputFormThree);
@@ -233,16 +241,19 @@ buttonOneInUse += 1;
     const toDoPostThree= document.querySelector('#formThree');
     const toDoInputLiThree = document.querySelector('#todoinputThree');
     const toDoListThree = document.querySelector('.tasklistThree');
-    //je les transforme en un li dans ul
+//je les transforme en un li dans ul
     postitFormThree.onsubmit = function(event) {
     event.preventDefault();
-    const newTodoListThree = document.createElement("li");
-    newTodoListUn.innerHTML = (`<svg xmlns="http://www.w3.org/2000/svg" class="icons_val" x="0px" y="0px" width="1.5rem" height="1.5rem" viewBox="0 0 48 48">
-    <circle class="circle_icons" cx="28" cy="28" r="18.5" fill="#a5d6a7"></circle><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M35.4,38.8c-3.2,2.4-7.1,3.9-11.4,3.9C13.7,42.7,5.3,34.3,5.3,24c0-2.6,0.6-5.2,1.5-7.4"></path><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M12.1,9.6C15.3,7,19.5,5.3,24,5.3c10.3,0,18.7,8.4,18.7,18.7c0,2.3-0.4,4.5-1.2,6.6"></path><polyline fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" points="16.5,23.5 21.5,28.5 32,18"></polyline>
-    </svg> ${toDoInputLiThree.value}`); 
-    toDoListThree.appendChild(newTodoListThree);
-    toDoInputLiThree.value = "";  
-     };
+            const newTodoListThree = document.createElement("li");
+            if (toDoInputLiThree.value.trim() !== "") {
+                newTodoListThree.innerHTML = (`${checkForm} ${toDoInputLiThree.value}`);
+                toDoListThree.appendChild(newTodoListThree);
+                toDoInputLiThree.value = "";
+            }
+            else {
+                return "Can't send"
+            }
+        }
      buttonThreeInUse += 1;
     
 } else {
@@ -259,7 +270,7 @@ if (buttonFourInUse == 0 ){
      postitFour.classList.add("post-it");
      postitFour.classList.add("postremoveFour");
      postItsgroupe.appendChild(postitFour);
-     console.log('.postit');
+
      // je créé un bouton pour supprimer la to do list ensuite
     const removeButtonFour = document.createElement('button');
     removeButtonFour.classList.add("removeFour");
@@ -270,41 +281,44 @@ if (buttonFourInUse == 0 ){
     divtoremoveFour.forEach(postremoveFour => {
      postremoveFour.remove();
      buttonFourInUse -= 1;})});
-     // creer un tableau d'ul pour y mettre les li d'après
-      const taskListFour = document.createElement('ul');
-      taskListFour.classList.add("tasklistFour")
-      postitFour.appendChild(taskListFour);
+  // creer un tableau d'ul pour y mettre les li d'après
+    const taskListFour = document.createElement('ul');
+    taskListFour.classList.add("tasklistFour")
+    postitFour.appendChild(taskListFour);
  //je cree une form 
-     const postitFormFour = document.createElement("form");
-     postitFormFour.setAttribute("id", "formThree");
-     postitFour.appendChild(postitFormFour);
+    const postitFormFour = document.createElement("form");
+    postitFormFour.setAttribute("id", "formThree");
+    postitFour.appendChild(postitFormFour);
  // je lui donne un input avec setattribute et un input de validation
-     const inputFormFour = document.createElement("input");
-     inputFormFour.setAttribute("type", "text");
-     inputFormFour.setAttribute("name", "todo");
-     inputFormFour.setAttribute("placeholder", "tuez moi svp");
-     inputFormFour.setAttribute("value", "");
-     inputFormFour.setAttribute("id", "todoinputFour");
-     postitFormFour.appendChild(inputFormFour);
-     const submitform = document.createElement("input");
-     submitform.setAttribute("type", "submit");
-     submitform.setAttribute("value", "send");
-     postitFormFour.appendChild(submitform);    
+    const inputFormFour = document.createElement("input");
+    inputFormFour.setAttribute("type", "text");
+    inputFormFour.setAttribute("name", "todo");
+    inputFormFour.setAttribute("placeholder", "votre texte");
+    inputFormFour.setAttribute("value", "");
+    inputFormFour.setAttribute("id", "todoinputFour");
+    postitFormFour.appendChild(inputFormFour);
+    const submitform = document.createElement("input");
+    submitform.setAttribute("type", "submit");
+    submitform.setAttribute("value", "send");
+    postitFormFour.appendChild(submitform);    
  
-     //je recupere ses inputs
-     const toDoPostFour= document.querySelector('#formFour');
-     const toDoInputLiFour = document.querySelector('#todoinputFour');
-     const toDoListFour = document.querySelector('.tasklistFour');
+//je recupere ses inputs
+    const toDoPostFour= document.querySelector('#formFour');
+    const toDoInputLiFour = document.querySelector('#todoinputFour');
+    const toDoListFour = document.querySelector('.tasklistFour');
  //je les transforme en un li dans ul
      postitFormFour.onsubmit = function(event) {
      event.preventDefault();
-     const newTodoListFour = document.createElement("li");
-     newTodoListUn.innerHTML = (`<svg xmlns="http://www.w3.org/2000/svg" class="icons_val" x="0px" y="0px" width="1.5rem" height="1.5rem" viewBox="0 0 48 48">
-    <circle class="circle_icons" cx="28" cy="28" r="18.5" fill="#a5d6a7"></circle><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M35.4,38.8c-3.2,2.4-7.1,3.9-11.4,3.9C13.7,42.7,5.3,34.3,5.3,24c0-2.6,0.6-5.2,1.5-7.4"></path><path fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="M12.1,9.6C15.3,7,19.5,5.3,24,5.3c10.3,0,18.7,8.4,18.7,18.7c0,2.3-0.4,4.5-1.2,6.6"></path><polyline fill="none" stroke="#18193f" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" points="16.5,23.5 21.5,28.5 32,18"></polyline>
-    </svg> ${toDoInputLiFour.value}`);
-     toDoListFour.appendChild(newTodoListFour);
-     toDoInputLiFour.value = "";  
-      };
+            const newTodoListFour = document.createElement("li");
+            if (toDoInputLiFour.value.trim() !== "") {
+                newTodoListFour.innerHTML = (`${checkForm} ${toDoInputLiFour.value}`);
+                toDoListFour.appendChild(newTodoListFour);
+                toDoInputLiFour.value = "";
+            }
+            else {
+                return "Can't send"
+            }
+        }
     buttonFourInUse += 1;
      
 } else {
