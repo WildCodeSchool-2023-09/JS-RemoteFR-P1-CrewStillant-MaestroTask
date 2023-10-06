@@ -113,7 +113,6 @@ header {
     width: 60px;
     height: 80px;
     position: relative;
-    float: right;
     margin-right: 20px;
 }
 
@@ -121,6 +120,7 @@ header {
     float: right;
     transform: rotate(270deg);
     margin-bottom: 0;
+    margin-right: 3rem;
     position: relative;
     animation: moveOnSpot 2s infinite alternate;
 }
@@ -371,6 +371,13 @@ form {
     animation: slideName 40s linear infinite;
 }
 
+.right_section div a {
+    text-decoration: none;
+    font-family: monospace;
+    color: black;
+    line-height: 1;
+}
+
 .right_section div:nth-child(1) {
     padding-left: 1rem;
 }
@@ -429,6 +436,13 @@ form {
 /* Media query pour des écrans au-dessus de 1200px */
 @media screen and (min-width: 1200px) {
 
+.right_section div {
+        animation: none;
+        min-width: 25%;
+        font-size: 1.2rem;
+        font-family: monospace;
+    }
+
     /* Ajoutez vos styles pour les écrans au-dessus de 1200px ici */
     .post-its {
         display: grid;
@@ -462,7 +476,7 @@ form {
     }
 
     .logo img {
-        width: 2rem;
-        height: 2rem;
+        width: 6rem;
+        height: 6rem;
     }
 }
