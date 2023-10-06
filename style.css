@@ -213,7 +213,7 @@ footer {
     border-radius: 16px;
     margin: 2rem 3.5rem;
     min-height: 20rem;
-    max-width: 450px;
+    width: 450px;
     overflow: auto;
     word-wrap: break-word;
 }
@@ -227,7 +227,7 @@ footer {
     margin-left: 3.5rem;
     margin-right: 3.5rem;
     min-height: 20rem;
-    max-width: 450px;
+    width: 450px;
     overflow: auto;
     word-wrap: break-word;
 }
@@ -344,8 +344,16 @@ form {
     font-size: 0.8rem;
 }
 
+#mfUp {
+    margin-left: 2rem;
+}
+
 #mfDown {
-    margin-left: 4.5rem;
+    margin-left: 6.5rem;
+}
+
+.text_footer_left {
+    margin-left: 2rem;
 }
 
 .dark_tray {
@@ -394,7 +402,7 @@ form {
         margin-left: 3.5rem;
         margin-right: 3.5rem;
         min-height: 20rem;
-        max-width: 450px;
+        width: 450px;
         overflow: auto;
         word-wrap: break-word;
         }
@@ -436,6 +444,10 @@ form {
 /* Media query pour des écrans au-dessus de 1200px */
 @media screen and (min-width: 1200px) {
 
+.left_section {
+        text-align: center;
+    }
+
 .right_section div {
         animation: none;
         min-width: 25%;
@@ -461,7 +473,7 @@ form {
         margin-left: 3.5rem;
         margin-right: 3.5rem;
         min-height: 20rem;
-        max-width: 450px;
+        width: 450px;
         overflow: none;
         word-wrap: break-word;
         }
