@@ -31,10 +31,6 @@ body {
     height: 100%;
 }
 
-#littleBody {
-    padding-bottom: 25vh;
-}
-
 body {
     background-color: #F7E1D7;
 }
@@ -79,8 +75,6 @@ header {
 .mood {
     text-align: center;
     margin-top: 20px;
-    margin-right: 20px;
-
 }
 
 .mood img {
@@ -118,9 +112,9 @@ header {
 .flowers {
     width: 60px;
     height: 80px;
-    position: absolute;
-    margin-left: 20px;
-    margin-top: 5px;
+    position: relative;
+    float: right;
+    margin-right: 20px;
 }
 
 .plants {
@@ -175,6 +169,16 @@ footer {
     border: 0;
     width: 70px;
     text-align: center;
+}
+
+.removeFour, .removeThree, .removeTwo, .removeOne {
+    margin-left: 90%;
+    margin-top: 5%;
+    width: 1rem;
+    height: 1rem;
+    background-color: rgb(246, 250, 242);
+    box-shadow: 3px 3px 6px 0px #000000;
+    background-color: #F7E1D7;
 }
 
 .dropdown-menu-content li {
@@ -326,7 +330,7 @@ form {
     background-color: #EDAFB8;
     display: flex;
     width: 100%;
-    min-height: 10vh;
+    min-height: 15vh;
     max-height: max-content;
     font-family: 'Recursive', sans-serif;
 }
@@ -365,13 +369,6 @@ form {
     min-width: 100%;
     font-size: 0.8rem;
     animation: slideName 40s linear infinite;
-}
-
-
-.right_section div>a {
-    text-decoration: none;
-    color: black;
-    line-height: 1rem;
 }
 
 .right_section div:nth-child(1) {
@@ -429,23 +426,6 @@ form {
     }
 }
 
-@media screen and (max-width: 422px) {
-
-    .footer_class {
-        max-height: 15vh;
-    }
-
-    .mood img {
-        width: 2rem;
-        height: 2rem;
-    }
-
-    .logo img {
-        width: 2rem;
-        height: 2rem;
-    }
-}
-
 /* Media query pour des écrans au-dessus de 1200px */
 @media screen and (min-width: 1200px) {
 
@@ -457,7 +437,8 @@ form {
         padding-top: 4rem;
     }
 
-    .post-it {
+
+.post-it {
         box-shadow: 7px 7px 10px 0px #000000;
         background-color: rgb(246, 235, 146);
         border-color: #4e4c4b86;
@@ -469,5 +450,19 @@ form {
         max-width: 450px;
         overflow: none;
         word-wrap: break-word;
+        }
+
+    }
+
+@media screen and (max-width: 422px) {
+
+    .mood img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .logo img {
+        width: 2rem;
+        height: 2rem;
     }
 }

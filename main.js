@@ -37,21 +37,6 @@ emojis.forEach(emoji => {
 
 //QUENTIN
 
-// fonction PopUp
-
-// function popUp(){
-//     const popup = document.createElement('div');
-//     popup.classList.add("popup");
-//     popup.setAttribute("id", "test");
-//     const cancel = document.createElement('div');
-//     cancel.classList.add("cancel");
-//     cancel.innerHTML = 'close';
-//     cancel.onclick = function (e) { popup.parentNode.removeChild(popup) };
-//     const message = document.createElement('span');
-//     message.innerHTML = "Cette liste est déjà affichée sur votre page";
-//     popup.appendChild(message);                                    
-//     popup.appendChild(cancel);
-//     document.body.appendChild(popup);
 // le menu déroulant en appuyant sur le bouton Ajouter une checklist
 const dropdownBtn = document.querySelector(".dropdown-btn");
 const dropdownMenu = document.querySelector('.dropdown-menu-content');
@@ -89,15 +74,17 @@ buttonOne.addEventListener('click', function() {
     const removeButtonOne = document.createElement('button');
     removeButtonOne.classList.add("removeOne");
     postitOne.appendChild(removeButtonOne);
+    // j'écoute les clicks dessus et je supprime la div si jamais on le touche !
+    removeButtonOne.addEventListener('click', function () 
+    {const divtoremoveOne = document.querySelectorAll('.postremoveOne');
+    divtoremoveOne.forEach(postremoveOne => {
+     postremoveOne.remove();
+     buttonOneInUse -= 1;})});
  // creer un tableau d'ul pour y mettre les li d'après
      const taskListOne = document.createElement('ul');
      taskListOne.classList.add("tasklistOne")
      postitOne.appendChild(taskListOne);
-     //test pour voir si je peux remplir ou afficher mes li dans ul
-    //  const listeLiOne = document.createElement('li');
-    //  listeLiOne.innerHTML = "tuez moi rien n'a de sens";
-    //  taskListOne.appendChild(listeLiOne); 
-
+ 
 //je cree une form 
     const postitFormOne = document.createElement("form");
     postitFormOne.setAttribute("id", "formOne");
@@ -106,7 +93,7 @@ buttonOne.addEventListener('click', function() {
     const inputFormOne = document.createElement("input");
     inputFormOne.setAttribute("type", "text");
     inputFormOne.setAttribute("name", "todo");
-    inputFormOne.setAttribute("placeholder", "tuez moi svp");
+    inputFormOne.setAttribute("placeholder", "votre texte");
     inputFormOne.setAttribute("value", "");
     inputFormOne.setAttribute("id", "todoinputOne");
     postitFormOne.appendChild(inputFormOne);
@@ -133,69 +120,74 @@ buttonOne.addEventListener('click', function() {
             }
         }
     //j'incrémente de 1 mon Butt'use pour qu'il se bloque
-    buttonOneInUse += 1;
-    // j'écoute les clicks dessus et je supprime la div si jamais on le touche !
-    removeButtonOne.addEventListener('click', function () {const divtoremoveOne = document.querySelectorAll('.postremoveOne');
-    divtoremoveOne.forEach(postremoveOne => {
-        postremoveOne.remove();
-        buttonOneInUse -= 1;})});
-        } else {
-            alert("Désolé Cher Utilisateur mais il n'est pas encore possible de créer plusieurs fois la même liste !");
-        }
+buttonOneInUse += 1;
+    
+} else {
+    alert("Désolé Cher Utilisateur mais il n'est pas encore possible de créer plusieurs fois la même liste !");
+}
 
-    });
+});
 
 
  // fonction bouton 2 dite urgente 
 
  buttonTwo.addEventListener('click', function() {
-    if (buttonTwoInUse == 0 ){
-    // creer un element id dans ld div du H1
-    const postitTwo = document.createElement("div");
-    postitTwo.classList.add("post-itU");
-    postItUrgent.innerHTML = "<h1>Tâche urgente</h1>";
-    postItUrgent.classList.toggle("visible2");
-    postItUrgent.appendChild(postitTwo);
+     if (buttonTwoInUse == 0) {
+         // creer un element id dans ld div du H1
+         const postitTwo = document.createElement("div");
+         postitTwo.classList.add("post-itU");
+         postItUrgent.innerHTML = "<h1>Tâche urgente</h1>";
+         postItUrgent.classList.toggle("visible2");
+         postItUrgent.appendChild(postitTwo);
+        
+         // je créé un bouton pour supprimer la to do list ensuite
+         const removeButtonTwo = document.createElement('button');
+         removeButtonTwo.classList.add("removeTwo");
+         postitTwo.appendChild(removeButtonTwo);
+         // j'écoute les clicks dessus et je supprime la div si jamais on le touche !
+         removeButtonTwo.addEventListener('click', function () {
+             const divtoremoveTwo = document.querySelectorAll('.postremoveTwo');
+             divtoremoveTwo.forEach(postremoveTwo => {
+                 postremoveTwo.remove();
+                 buttonTwoInUse -= 1;
+             })
+         });
+        
+         // creer un tableau d'ul pour y mettre les li d'après
+         const taskListTwo = document.createElement('ul');
+         taskListTwo.classList.add("tasklistTwo");
+         taskListTwo.setAttribute("id", "tasklistTwo");
+         postitTwo.appendChild(taskListTwo);
+         //je cree une form 
+         const postitFormTwo = document.createElement("form");
+         postitFormTwo.setAttribute("id", "formTwo");
+         postitTwo.appendChild(postitFormTwo);
+         // je lui donne un input avec setattribute et un input de validation
+         const inputFormTwo = document.createElement("input");
+         inputFormTwo.setAttribute("type", "text");
+         inputFormTwo.setAttribute("name", "todo");
+         inputFormTwo.setAttribute("placeholder", "votre texte");
+         inputFormTwo.setAttribute("value", "");
+         inputFormTwo.setAttribute("id", "todoinputTwo");
+         postitFormTwo.appendChild(inputFormTwo);
+         const submitform = document.createElement("input");
+         submitform.setAttribute("type", "submit");
+         submitform.setAttribute("value", "send");
+         postitFormTwo.appendChild(submitform);
 
- // creer un tableau d'ul pour y mettre les li d'après
-    const removeButtonTwo= document.createElement('button');
-    removeButtonTwo.classList.add("removeTwo");
-    postitTwo.appendChild(removeButtonTwo);
-    // creer un tableau d'ul pour y mettre les li d'après
-     const taskListTwo = document.createElement('ul');
-    taskListTwo.classList.add("tasklistTwo");
-    taskListTwo.setAttribute("id", "tasklistTwo");
-     postitTwo.appendChild(taskListTwo);
-    //je cree une form 
-    const postitFormTwo = document.createElement("form");
-    postitFormTwo.setAttribute("id", "formTwo");
-    postitTwo.appendChild(postitFormTwo);
-    // je lui donne un input avec setattribute et un input de validation
-    const inputFormTwo = document.createElement("input");
-    inputFormTwo.setAttribute("type", "text");
-    inputFormTwo.setAttribute("name", "todo");
-    inputFormTwo.setAttribute("placeholder", "tuez moi svp");
-    inputFormTwo.setAttribute("value", "");
-    inputFormTwo.setAttribute("id", "todoinputTwo");
-    postitFormTwo.appendChild(inputFormTwo);
-    const submitform = document.createElement("input");
-    submitform.setAttribute("type", "submit");
-    submitform.setAttribute("value", "send");
-    postitFormTwo.appendChild(submitform);    
-
-    //je recupere ses inputs
-    const toDoPostTwo= document.querySelector('#formTwo');
-    const toDoInputLiTwo = document.querySelector('#todoinputTwo');
-    const toDoListTwo = document.querySelector('.tasklistTwo');
-//je les transforme en un li dans ul
-    postitFormTwo.onsubmit = function(event) {
-    event.preventDefault();
-    const newTodoListTwo = document.createElement("li");
-    newTodoListTwo.innerHTML = toDoInputLiTwo.value;
-    validateTextarea(toDoInputLiTwo.value);
-    toDoListTwo.appendChild(newTodoListTwo);
-    toDoInputLiTwo.value = "";  
-     };
+         //je recupere ses inputs
+         const toDoPostTwo = document.querySelector('#formTwo');
+         const toDoInputLiTwo = document.querySelector('#todoinputTwo');
+         const toDoListTwo = document.querySelector('.tasklistTwo');
+         //je les transforme en un li dans ul
+         postitFormTwo.onsubmit = function (event) {
+             event.preventDefault();
+             const newTodoListTwo = document.createElement("li");
+             newTodoListTwo.innerHTML = (`${checkForm} ${toDoInputLiTwo.value}`);
+             toDoListTwo.appendChild(newTodoListTwo);
+             toDoInputLiOne.value = "";
+         }
+    //j'incrémente de 1 mon Butt'use pour qu'il se bloque
      buttonTwoInUse += 1
 } else {
     alert("Désolé Cher Utilisateur mais il n'est pas encore possible de créer plusieurs fois la même liste !");
@@ -211,13 +203,20 @@ buttonOne.addEventListener('click', function() {
     // creer un element id dans le grand bloc des posts it
     const postitThree = document.createElement("div");
     postitThree.classList.add("post-it");
+    postitThree.classList.add("postremoveThree");
     postItsgroupe.appendChild(postitThree);
-    console.log('.postit');
+
     // je créé un bouton pour supprimer la to do list ensuite
-    const removeButtonThree= document.createElement('button');
+    const removeButtonThree = document.createElement('button');
     removeButtonThree.classList.add("removeThree");
     postitThree.appendChild(removeButtonThree);
- // creer un tableau d'ul pour y mettre les li d'après
+    // j'écoute les clicks dessus et je supprime la div si jamais on le touche !
+    removeButtonThree.addEventListener('click', function () 
+    {const divtoremoveThree = document.querySelectorAll('.postremoveThree');
+    divtoremoveThree.forEach(postremoveThree => {
+    postremoveThree.remove();
+    buttonThreeInUse -= 1;})});
+    // creer un tableau d'ul pour y mettre les li d'après
      const taskListThree = document.createElement('ul');
      taskListThree.classList.add("tasklistThree")
      postitThree.appendChild(taskListThree);    
@@ -229,7 +228,7 @@ buttonOne.addEventListener('click', function() {
     const inputFormThree = document.createElement("input");
     inputFormThree.setAttribute("type", "text");
     inputFormThree.setAttribute("name", "todo");
-    inputFormThree.setAttribute("placeholder", "tuez moi svp");
+    inputFormThree.setAttribute("placeholder", "votre texte");
     inputFormThree.setAttribute("value", "");
     inputFormThree.setAttribute("id", "todoinputThree");
     postitFormThree.appendChild(inputFormThree);
@@ -245,17 +244,21 @@ buttonOne.addEventListener('click', function() {
 //je les transforme en un li dans ul
     postitFormThree.onsubmit = function(event) {
     event.preventDefault();
-    const newTodoListThree = document.createElement("li");
-    newTodoListThree.innerHTML = toDoInputLiThree.value;
-    validateTextarea(toDoInputLiThree.value);
-    toDoListThree.appendChild(newTodoListThree);
-    toDoInputLiThree.value = "";  
-     };
-     buttonThreeInUse += 1
+            const newTodoListThree = document.createElement("li");
+            if (toDoInputLiThree.value.trim() !== "") {
+                newTodoListThree.innerHTML = (`${checkForm} ${toDoInputLiThree.value}`);
+                toDoListThree.appendChild(newTodoListThree);
+                toDoInputLiThree.value = "";
+            }
+            else {
+                return "Can't send"
+            }
+        }
+     buttonThreeInUse += 1;
+    
 } else {
     alert("Désolé Cher Utilisateur mais il n'est pas encore possible de créer plusieurs fois la même liste !");
 }
-
 });
 
 // fonction bouton 4
@@ -265,12 +268,19 @@ if (buttonFourInUse == 0 ){
      // creer un element id dans le grand bloc des posts it
      const postitFour = document.createElement("div");
      postitFour.classList.add("post-it");
+     postitFour.classList.add("postremoveFour");
      postItsgroupe.appendChild(postitFour);
-     console.log('.postit');
+
      // je créé un bouton pour supprimer la to do list ensuite
-    const removeButtonFour= document.createElement('button');
+    const removeButtonFour = document.createElement('button');
     removeButtonFour.classList.add("removeFour");
     postitFour.appendChild(removeButtonFour);
+    // j'écoute les clicks dessus et je supprime la div si jamais on le touche !
+    removeButtonFour.addEventListener('click', function () 
+    {const divtoremoveFour = document.querySelectorAll('.postremoveFour');
+    divtoremoveFour.forEach(postremoveFour => {
+     postremoveFour.remove();
+     buttonFourInUse -= 1;})});
   // creer un tableau d'ul pour y mettre les li d'après
     const taskListFour = document.createElement('ul');
     taskListFour.classList.add("tasklistFour")
@@ -283,7 +293,7 @@ if (buttonFourInUse == 0 ){
     const inputFormFour = document.createElement("input");
     inputFormFour.setAttribute("type", "text");
     inputFormFour.setAttribute("name", "todo");
-    inputFormFour.setAttribute("placeholder", "tuez moi svp");
+    inputFormFour.setAttribute("placeholder", "votre texte");
     inputFormFour.setAttribute("value", "");
     inputFormFour.setAttribute("id", "todoinputFour");
     postitFormFour.appendChild(inputFormFour);
@@ -296,16 +306,21 @@ if (buttonFourInUse == 0 ){
     const toDoPostFour= document.querySelector('#formFour');
     const toDoInputLiFour = document.querySelector('#todoinputFour');
     const toDoListFour = document.querySelector('.tasklistFour');
-//je les transforme en un li dans ul
-    postitFormFour.onsubmit = function(event) {
-    event.preventDefault();
-    const newTodoListFour = document.createElement("li");
-    newTodoListFour.innerHTML = toDoInputLiFour.value;
-    validateTextarea(toDoInputLiFour.value);
-    toDoListFour.appendChild(newTodoListFour);
-    toDoInputLiFour.value = "";  
-    };
-    buttonFourInUse += 1
+ //je les transforme en un li dans ul
+     postitFormFour.onsubmit = function(event) {
+     event.preventDefault();
+            const newTodoListFour = document.createElement("li");
+            if (toDoInputLiFour.value.trim() !== "") {
+                newTodoListFour.innerHTML = (`${checkForm} ${toDoInputLiFour.value}`);
+                toDoListFour.appendChild(newTodoListFour);
+                toDoInputLiFour.value = "";
+            }
+            else {
+                return "Can't send"
+            }
+        }
+    buttonFourInUse += 1;
+     
 } else {
     alert("Désolé Cher Utilisateur mais il n'est pas encore possible de créer plusieurs fois la même liste !");
 }
