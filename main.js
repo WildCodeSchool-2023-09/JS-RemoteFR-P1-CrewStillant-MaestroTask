@@ -36,6 +36,7 @@ emojis.forEach(emoji => {
 });
 
 //QUENTIN
+const colors = ["#FFADAD", "#FFD6A5", "#E4F1EE", "#DEDAF4", "#D9EDF8", "#FDFFB6"];
 
 // le menu déroulant en appuyant sur le bouton Ajouter une checklist
 const dropdownBtn = document.querySelector(".dropdown-btn");
@@ -67,6 +68,12 @@ buttonOne.addEventListener('click', function() {
     // creer un element id dans le grand bloc des posts it
     const postitOne = document.createElement("div");
     postitOne.classList.add("post-it");
+        
+    // changement de couleurs des post-it
+    const randomColorIndex = Math.floor(Math.random() * colors.length);
+    const randomColor = colors[randomColorIndex];
+    postitOne.style.backgroundColor = randomColor;
+        
     postitOne.classList.add("postremoveOne");
     postItsgroupe.appendChild(postitOne);
     console.log('.postit');
@@ -203,6 +210,12 @@ buttonOneInUse += 1;
     // creer un element id dans le grand bloc des posts it
     const postitThree = document.createElement("div");
     postitThree.classList.add("post-it");
+        
+    // changement de couleurs du post -it 
+    const randomColorIndex = Math.floor(Math.random() * colors.length);
+    const randomColor = colors[randomColorIndex];
+    postitThree.style.backgroundColor = randomColor;
+        
     postitThree.classList.add("postremoveThree");
     postItsgroupe.appendChild(postitThree);
 
@@ -268,6 +281,12 @@ if (buttonFourInUse == 0 ){
      // creer un element id dans le grand bloc des posts it
      const postitFour = document.createElement("div");
      postitFour.classList.add("post-it");
+
+    // changement de couleurs du post-it 
+    const randomColorIndex = Math.floor(Math.random() * colors.length);
+    const randomColor = colors[randomColorIndex];
+    postitFour.style.backgroundColor = randomColor;
+    
      postitFour.classList.add("postremoveFour");
      postItsgroupe.appendChild(postitFour);
 
